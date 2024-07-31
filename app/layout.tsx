@@ -6,23 +6,16 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "chronark.com",
-    template: "%s | chronark.com",
+    default: "https://portfolio-version2-five.vercel.app/",
+    template: "%s | https://portfolio-version2-five.vercel.app/",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description: "Portfolio website of Ryan Leong",
   openGraph: {
-    title: "chronark.com",
+    title: "https://portfolio-version2-five.vercel.app/",
     description:
-      "Co-founder of unkey.dev and founder of planetfall.io",
-    url: "https://chronark.com",
-    siteName: "chronark.com",
-    images: [
-      {
-        url: "https://chronark.com/og.png",
-        width: 1920,
-        height: 1080,
-      },
-    ],
+      "Computer Engineering major from the National University of Singapore",
+    url: "https://portfolio-version2-five.vercel.app/",
+    siteName: "https://portfolio-version2-five.vercel.app/",
     locale: "en-US",
     type: "website",
   },
@@ -37,10 +30,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  twitter: {
-    title: "Chronark",
-    card: "summary_large_image",
-  },
+
   icons: {
     shortcut: "/favicon.png",
   },
