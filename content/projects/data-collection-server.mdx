@@ -1,0 +1,37 @@
+---
+title: Data Collection server hosted on an OrangePi 3B+
+description: I built a data collection server that collects data from various lab equipment using the National Instruments GPIB interface and performs various data analysis methods including calcultion of Modified Allan Deviation and Fast Fourier Transform.
+date: "2023-07-31"
+repository: "ryryry-3302/cnt90-data-collection"
+published: true
+  
+---
+
+## Data Collection Server
+
+### Overview
+As part of my internship, I initiated and developed a data collection server hosted on an Orange Pi 3B. This server was designed to wirelessly control lab equipment, capture data, and perform data analysis. The project aimed to streamline the process of monitoring and analyzing experimental data by consolidating these functions into a single platform.
+
+### Key Features
+- **GPIB Driver Integration**: Enabled control of various lab instruments using the NI-USB-HS GPIB dongle, facilitating seamless communication between the server and equipment.
+- **Data Collection**: Implemented features for capturing frequency ratio and time interval data, allowing for comprehensive experimental analysis.
+- **Advanced Data Analysis**: Included tools for generating Modified Allan Deviation and Fast Fourier Transform results, providing in-depth insights into the data.
+- **User Interface**: Developed a user-friendly interface with options for dark/light mode, real-time updates, and graphical data views.
+- **CSV Download**: Allowed users to download collected data in CSV format for further analysis and record-keeping.
+
+### Technologies Used
+- **Hardware**: Orange Pi 3B
+- **Software**: Linux, Dash
+- **Libraries**: Pandas/Numpy, PyVisa
+- **Version Control**: Git
+
+### Challenges Faced
+Developing this server involved overcoming several challenges:
+- **Hardware and Driver Issues**: The Orange Pi required specific open-source Linux GPIB drivers due to compatibility issues with the standard National Instruments setup. This process demanded significant trial and error and a deeper understanding of computer architecture. I have documented my solution here: [GPIB Driver Installation on Orange Pi](https://github.com/ryryry-3302/linux-gpib)
+- **Documentation and Community Support**: Limited documentation and community support for both the Orange Pi and the Tang Nano 20k made troubleshooting and integration more challenging. Gathering and interpreting scattered information from various datasheets was time-consuming.
+
+Despite these obstacles, the project was successful, thanks to the support and feedback from my supervisors. The experience significantly enhanced my skills in hardware-software integration and data analysis.
+Unfortunately, I am also unable to share the source code for this project as it is restricted under A*Star IP policy. However, I am happy to discuss the project in more detail and share my experience.
+
+![](/orangepi-server.png)
+

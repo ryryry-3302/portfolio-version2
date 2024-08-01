@@ -1,0 +1,44 @@
+---
+title: FPGA Frequency Synthesizer
+description: GOWIN Tang Nano 20K FPGA board that is capable of high precision time synchronisation of less than 10ns with external Caesium Atomic Clocks 
+repository: ryryry-3302/fpga_frequency_synthesizer
+date: 2024-07-31
+published: true
+---
+
+## High-Precision Time Synchronization Using FPGA Devices
+
+Time synchronization is crucial across various fields and applications requiring precise timing to ensure accuracy, reliability, and coordination. In telecommunications, financial systems, power grids, and scientific research, precise timekeeping enables seamless data transfer, transaction accuracy, and synchronized operations. High-precision time synchronization is essential for maintaining system integrity, enhancing performance, and supporting innovations in these critical areas.
+
+### Project Objective
+
+In this project, I explored the application and performance of FPGA devices in Pulse Per Second (PPS) synchronization. Under the supervision of Liaw Chin Yi, the goal was to develop a reliable and efficient solution for time synchronization, potentially reducing costs and expanding accessibility in high-precision applications.
+
+### Work Plan and Tasks Performed
+
+#### May: Orientation, Literature Review, and Project Proposal
+
+In May, I focused on understanding the current state of the art and setting up my lab station. I reviewed several relevant research papers, including “Design Of A Cesium Atomic Clock 1PPS Signal Generation And Synchronization Module Based On FPGA,” which became the foundation for my project proposal.
+
+I familiarized myself with the GOWIN EDA and Tang Nano architecture, which were different from the FPGA board I had previously studied. My skills in Verilog and digital circuit planning were beneficial, and I also adjusted to new equipment like cesium atomic clocks, oscilloscopes, and CNT90 microwave counters. After drafting my project proposal, I discussed and resolved any doubts with my supervisors before moving on to module development.
+
+#### June: Development, Integration, and Testing
+
+June was intensive, involving iterative cycles of building modules, testing, reevaluating, and rebuilding. The challenges included debugging both software and hardware aspects, which required advanced troubleshooting methods and tools. I utilized simulation tools like edaplayground and found oscilloscopes particularly valuable for debugging.
+
+By the end of June, the design achieved synchronization precision of around 7-11 ns and demonstrated respectable frequency stability, as verified using tools like Stable32 for Allan deviation calculations.
+
+### Conclusion
+
+This project aimed to harness FPGA devices for high-precision time synchronization, providing a cost-effective and accessible solution for critical applications. The experience significantly enhanced my skills in FPGA design and debugging, contributing to a deeper understanding of time synchronization technologies.
+
+Currently the supported features include
+- 1PPS input synchronisation
+- 1PPS output generation
+- UART Communications
+    - Phase modulation
+    - Pulse width modulation
+    - Reset
+
+### Disclaimer
+As this project is done under A*Star IP policy, I am not able to disclose my project report or any other confidential information. However, I am able to share my experience and knowledge gained from this project. Feel free to reach out to me if you have any questions or would like to discuss further.
