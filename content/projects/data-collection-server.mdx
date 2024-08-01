@@ -1,15 +1,35 @@
 ---
-title: planetfall.io
-description: I'm building a SAAS providing global latency monitoring for your APIs and websites from edge locations around the world. Have you ever wondered how fast your API is in any part of the world? Planetfall allows you to find out and monitor it continuously.
-date: "2023-04-01"
-url: https://planetfall.io
+title: Data Collection server hosted on an OrangePi 3B+
+description: I built a data collection server that collects data from various lab equipment using the National Instruments GPIB interface and performs various data analysis methods including calcultion of Modified Allan Deviation and Fast Fourier Transform.
+date: "2023-07-31"
 published: true
   
 ---
 
+## Data Collection Server
 
-[![](/planetfall.png)](https://planetfall.io)
+### Overview
+As part of my internship, I initiated and developed a data collection server hosted on an Orange Pi 3B. This server was designed to wirelessly control lab equipment, capture data, and perform data analysis. The project aimed to streamline the process of monitoring and analyzing experimental data by consolidating these functions into a single platform.
 
-Planetfall is a SaaS platform that provides global latency monitoring and synthetic monitoring for APIs. With over 60 regions to monitor from, customers can gain insights into the true performance of their API by checking latency from around the world. 
-Planetfall offers custom timeouts, threshold notifications, and real-time alerts for potential performance issues. Additionally, customers can create custom status pages to share with their customers, which can display availability and latency for every region. Planetfall offers a free tier that includes 100k checks per month and scales as customers grow. Overall, Planetfall helps customers stay in control of their API's performance, improve communication with their customers, and build trust.
+### Key Features
+- **GPIB Driver Integration**: Enabled control of various lab instruments using the NI-USB-HS GPIB dongle, facilitating seamless communication between the server and equipment.
+- **Data Collection**: Implemented features for capturing frequency ratio and time interval data, allowing for comprehensive experimental analysis.
+- **Advanced Data Analysis**: Included tools for generating Modified Allan Deviation and Fast Fourier Transform results, providing in-depth insights into the data.
+- **User Interface**: Developed a user-friendly interface with options for dark/light mode, real-time updates, and graphical data views.
+- **CSV Download**: Allowed users to download collected data in CSV format for further analysis and record-keeping.
+
+### Technologies Used
+- **Hardware**: Orange Pi 3B
+- **Software**: Linux, Dash
+- **Libraries**: Pandas/Numpy, PyVisa
+- **Version Control**: Git
+
+### Challenges Faced
+Developing this server involved overcoming several challenges:
+- **Hardware and Driver Issues**: The Orange Pi required specific open-source Linux GPIB drivers due to compatibility issues with the standard National Instruments setup. This process demanded significant trial and error and a deeper understanding of computer architecture.
+- **Documentation and Community Support**: Limited documentation and community support for both the Orange Pi and the Tang Nano 20k made troubleshooting and integration more challenging. Gathering and interpreting scattered information from various datasheets was time-consuming.
+
+Despite these obstacles, the project was successful, thanks to the support and feedback from my supervisors. The experience significantly enhanced my skills in hardware-software integration and data analysis.
+
+![](/orangepi-server.png)
 
