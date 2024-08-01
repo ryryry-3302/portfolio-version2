@@ -9,7 +9,6 @@ type Props = {
 		title: string;
 		description: string;
 		repository?: string;
-		demo?: string;
 	};
 
 	views: number;
@@ -29,12 +28,6 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 		links.push({
 			label: "Website",
 			href: project.url,
-		});
-	}
-	if (project.demo) {
-		links.push({
-			label: "Demo",
-			href: project.demo,
 		});
 	}
 	useEffect(() => {
