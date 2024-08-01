@@ -1,0 +1,66 @@
+---
+title: QuickSheet
+description: A word processor designed with students and cheatsheets in mind.
+date: "2024-06-01"
+published: true
+repository: "zackjh/quicksheet"
+  
+---
+
+
+ [![](https://raw.githubusercontent.com/zackjh/quicksheet/6c0ed0c62c9ddfa0a820c103d7a105a63d604e0b/build/icons/png/icon.png)](https://github.com/zackjh/quicksheet/releases/tag/v0.3.0) 
+
+Stuck with a couple hours before your examinations and need a cheatsheet fast? Fret not, QuickSheet is here to help
+
+### Introduction
+QuickSheet is a desktop application designed to address this need. It simplifies the process of creating effective cheat sheets, allowing students to focus on learning rather than formatting. With a user-friendly interface and powerful tools, QuickSheet helps students efficiently compile, organize, and format their study notes to maximize their exam preparation.
+
+### Project Overview
+
+QuickSheet is a desktop application tailored for students who need to create cheat sheets efficiently and effectively. The application supports rich text editing, code blocks, mathematical equations, and more, all while ensuring that cheat sheets fit within the two-sided A4 format often required for exams. This project has been jointly developed by me and [Zachary Kang](https://github.com/zackjh)
+
+### Key Features
+
+- **Rich Text Editing:** Format text with various styles, including alignment, color, and highlighting.
+- **Save As PDF:** Export cheat sheets as PDF files for easy sharing and printing.
+- **Import & Export to JSON:** Save and load documents in JSON format to preserve progress.
+- **Font Customization:** Adjust font types and sizes for better readability.
+- **Code Blocks:** Insert and format code snippets in various programming languages.
+- **Math Equations:** Add and format LaTeX mathematical equations.
+- **Images & Tables:** Include images and create tables for a well-organized cheat sheet.
+- **Page Formatting:** Adjust margins and layout to ensure content fits within the required format.
+- **Save & Autosave:** Save progress manually or automatically to prevent data loss.
+- **Dark Mode:** Option to reduce eye strain (pending implementation).
+
+### Development Process
+
+#### Choice of Technology Stack
+
+- **Electron:** Enables cross-platform desktop application development using web technologies.
+- **React:** Provides a component-based architecture for a maintainable codebase.
+- **TypeScript:** Adds static type-checking for more robust and reliable code.
+- **Tiptap:** A modern rich-text editor for advanced text editing capabilities.
+- **Tailwind CSS:** Utility-first CSS framework for efficient styling.
+- **shadcn/ui:** Pre-built UI components that integrate seamlessly with Tailwind CSS.
+- **webdriverIO:** Testing framework for Electron applications.
+
+#### Software Engineering Principles
+
+- **DRY (Don’t Repeat Yourself):** Reusable React components and utility functions.
+- **KISS (Keep It Simple, Stupid):** Clean and straightforward UI and code.
+- **YAGNI (You Aren’t Gonna Need It):** Focus on core features before adding extras.
+- **Separation of Concerns:** Organize code by responsibility to reduce complexity.
+
+### Notable Features
+
+- **Save As PDF:** Refactored to handle CSS styles from Tailwind CSS and Tiptap for accurate PDF output.
+- **Code Blocks:** Integrated syntax highlighting with lowlight and addressed version compatibility issues.
+- **Math Equations:** Added support for LaTeX using KaTeX, with careful management of package versions.
+- **Page Formatting:** Implemented static pagination to fit the two-sided A4 format, overcoming the complexities of dynamic pagination.
+
+### Quality Assurance
+
+- **Code Review:** Regular peer reviews using GitHub Pull Requests to ensure code quality.
+- **User Testing:** Collected feedback to ensure intuitive UI/UX across different platforms.
+- **System Testing:** Extensive automated testing using webdriverIO to validate core features and edge cases.
+- **Manual Testing:** Validated file import/export and PDF generation functions.
