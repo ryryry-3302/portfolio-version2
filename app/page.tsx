@@ -45,7 +45,7 @@ export default function Home() {
           </Link> to help STEM students build beautiful cheatsheets quick. You can view my resume {" "}
           <Link
             target="_blank"
-            href="public\Ryan_Resume.pdf"
+            href="Ryan_Resume.pdf"
             className="underline duration-500 hover:text-zinc-300"
           >
             here
