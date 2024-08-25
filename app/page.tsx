@@ -42,7 +42,15 @@ export default function Home() {
             className="underline duration-500 hover:text-zinc-300"
           >
             QuickSheet
-          </Link> to help STEM students build beautiful cheatsheets quick.
+          </Link> to help STEM students build beautiful cheatsheets quick. You can view my resume {" "}
+          <Link
+            target="_blank"
+            href="public\Ryan_Resume.pdf"
+            className="underline duration-500 hover:text-zinc-300"
+          >
+            here
+          </Link> 
+          .
         </h2>
       </div>
     </div>

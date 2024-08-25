@@ -9,14 +9,14 @@ published: true
 [![](https://ryryry-3302.github.io/My-Portfolio/images/python-file_8422275.png)](https://github.com/ryryry-3302/Video-Intro-Outro-Script/tree/main)
 
 ## Description
-Led a team of 8 to design and build an electric vehicle from scratch, contributing to the advancement of sustainable transportation solutions. This project, part of the SST-SUTD Big Discovery Camp Program, addresses the growing need for eco-friendly alternatives in the automotive industry.
+Developed a Python script to automate the tedious process of adding intros and outros to videos, streamlining video production workflows and saving significant time for content creators.
 
 ## Problems Addressed
-Addressing the need for eco-friendly alternatives in the automotive industry.
+Addressing the need for efficient video production workflows for content creators and video editors.
 
 ## Technical Skills Displayed
--   AutoCAD for chassis design
--   Electronics assembly and integration
--   Mechanical engineering principles
--   Collaborative project management
--   Prototyping and testing
+This project showcased skills in: 
+-   Python programming
+-   Utilizing the MoviePy library for video editing
+-   Automation of repetitive tasks
+
