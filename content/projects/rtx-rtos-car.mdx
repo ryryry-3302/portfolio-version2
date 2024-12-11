@@ -1,0 +1,26 @@
+---
+title: RTX RTOS Car controlled with PS4 controller
+description: A project to illustrate skills in embedded systems and real-time operating systems. The car is controlled using KEIL RTX RTOS using the FRDM KL25 Board and a ESP 32
+date: "2024-11-10"
+published: true
+repository: "ryryry-3302/CG2271"
+  
+---
+
+
+ [![](public/rtos-car.jpg)](https://www.youtube.com/shorts/eeN1Xv1kED4) 
+
+
+
+### ESP32
+- Used to receive bluetooth data from PS4 controller
+- Sends the data to the FRDM KL25Z Board using UART communication
+
+### Threads and ISR on the FRDM KL25Z Board
+- tBrain: Decode the data from the Serial Port and perform the necessary action
+- tMotorControl: Control the Action of the Motors for both direction and speed control using bitwise operations
+- tLED: Control the LED’s based on movement status
+- tAudio: Controls music effects
+- Serial_ISR: Used to trigger the tBrain thread after updating the data from the Serial Port
+
+![](public/cg2271.mp4)
