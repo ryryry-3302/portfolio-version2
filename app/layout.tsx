@@ -7,16 +7,16 @@ import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: {
-    default: "https://portfolio-version2-five.vercel.app/",
-    template: "%s | https://portfolio-version2-five.vercel.app/",
+    default: "Leong Ko Ryan Jasper | Robotics & Embedded Software Engineer",
+    template: "%s | Ryan Leong",
   },
-  description: "Portfolio website of Ryan Leong",
+  description: "Robotics & Embedded Software Engineer specializing in SLAM, sensor fusion, embedded systems, and autonomous navigation for robotics applications.",
   openGraph: {
-    title: "https://portfolio-version2-five.vercel.app/",
+    title: "Leong Ko Ryan Jasper | Robotics & Embedded Software Engineer",
     description:
-      "Computer Engineering major from the National University of Singapore",
+      "Robotics & Embedded Software Engineer specializing in SLAM, sensor fusion, embedded systems, and autonomous navigation for robotics applications.",
     url: "https://portfolio-version2-five.vercel.app/",
-    siteName: "https://portfolio-version2-five.vercel.app/",
+    siteName: "Ryan Leong Portfolio",
     locale: "en-US",
     type: "website",
   },
@@ -31,7 +31,20 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-
+  keywords: [
+    "Robotics Software Engineer",
+    "Embedded Systems Engineer",
+    "SLAM",
+    "ORB SLAM3",
+    "Sensor Fusion",
+    "Computer Engineering",
+    "NUS",
+    "Stanford",
+    "ZeroshotData",
+    "Autonomous Navigation",
+    "Robotics",
+  ],
+  authors: [{ name: "Leong Ko Ryan Jasper" }],
   icons: {
     shortcut: "/favicon.png",
   },
@@ -58,7 +71,7 @@ export default function RootLayout({
         <Analytics />
       </head>
       <body
-        className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
+        className={`text-zinc-100 min-h-screen ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
           }`}
       >
         {children}

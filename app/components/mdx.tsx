@@ -11,7 +11,7 @@ const components = {
 	h1: ({ className, ...props }) => (
 		<h1
 			className={clsx(
-				"mt-2 scroll-m-20 text-4xl font-bold tracking-tight",
+				"mt-2 scroll-m-20 text-xl md:text-2xl font-pixel text-pokemon-yellow pokemon-glow uppercase tracking-tighter",
 				className,
 			)}
 			{...props}
@@ -20,7 +20,7 @@ const components = {
 	h2: ({ className, ...props }) => (
 		<h2
 			className={clsx(
-				"mt-10 scroll-m-20 border-b border-b-zinc-800 pb-1 text-3xl font-semibold tracking-tight first:mt-0",
+				"mt-10 scroll-m-20 border-b-2 border-pokemon-yellow pb-2 text-lg md:text-xl font-pixel text-pokemon-yellow uppercase tracking-tighter first:mt-0",
 				className,
 			)}
 			{...props}
@@ -29,7 +29,7 @@ const components = {
 	h3: ({ className, ...props }) => (
 		<h3
 			className={clsx(
-				"mt-8 scroll-m-20 text-2xl font-semibold tracking-tight",
+				"mt-8 scroll-m-20 text-base md:text-lg font-pixel text-pokemon-yellow uppercase tracking-tighter",
 				className,
 			)}
 			{...props}
@@ -65,7 +65,7 @@ const components = {
 	a: ({ className, ...props }) => (
 		<Link
 			className={clsx(
-				"font-medium text-zinc-900 underline underline-offset-4",
+				"font-pixel text-xs text-pokemon-blue hover:text-pokemon-yellow underline underline-offset-4 transition-colors",
 				className,
 			)}
 			{...props}
@@ -73,23 +73,26 @@ const components = {
 	),
 	p: ({ className, ...props }) => (
 		<p
-			className={clsx("leading-7 [&:not(:first-child)]:mt-6", className)}
+			className={clsx("leading-relaxed font-pixel text-xs md:text-sm text-white/80 [&:not(:first-child)]:mt-6", className)}
 			{...props}
 		/>
 	),
 	ul: ({ className, ...props }) => (
-		<ul className={clsx("my-6 ml-6 list-disc", className)} {...props} />
+		<ul className={clsx("my-6 ml-6 list-none space-y-2", className)} {...props} />
 	),
 	ol: ({ className, ...props }) => (
-		<ol className={clsx("my-6 ml-6 list-decimal", className)} {...props} />
+		<ol className={clsx("my-6 ml-6 list-decimal font-pixel text-[10px] md:text-xs text-white/80", className)} {...props} />
 	),
 	li: ({ className, ...props }) => (
-		<li className={clsx("mt-2", className)} {...props} />
+		<li className={clsx("mt-2 font-pixel text-[10px] md:text-xs text-white/80 flex items-start gap-2", className)} {...props}>
+			<span className="text-pokemon-yellow">▶</span>
+			{props.children}
+		</li>
 	),
 	blockquote: ({ className, ...props }) => (
 		<blockquote
 			className={clsx(
-				"mt-6 border-l-2 border-zinc-300 pl-6 italic text-zinc-800 [&>*]:text-zinc-600",
+				"mt-6 border-l-4 border-pokemon-blue pl-6 italic text-white/60 bg-pokemon-blue/10 py-4",
 				className,
 			)}
 			{...props}

@@ -1,59 +1,142 @@
+"use client";
+import React, { useEffect } from "react";
+import { Navigation } from "./components/nav";
+import { Hero } from "./components/hero";
+import { Section } from "./components/section";
+import { ExperienceTimeline } from "./components/experience-timeline";
+import { SkillsGrid } from "./components/skills-grid";
+import { Card } from "./components/card";
 import Link from "next/link";
-import React from "react";
-import Particles from "./components/particles";
-
-const navigation = [
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
-];
+import { motion } from "framer-motion";
+import { ProjectCarousel } from "./components/project-carousel";
+import { VisaInfo } from "./components/visa-info";
 
 export default function Home() {
-  return (
-    <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
-      <nav className="my-16 animate-fade-in">
-        <ul className="flex items-center justify-center gap-4">
-          {navigation.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
-            >
-              {item.name}
-            </Link>
-          ))}
-        </ul>
-      </nav>
-      <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-      <Particles
-        className="absolute inset-0 -z-10 animate-fade-in"
-        quantity={100}
-      />
-      <h1 className="py-3.5 px-0.5 z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
-        ryan
-      </h1>
+	// Handle hash navigation when page loads
+	useEffect(() => {
+		const hash = window.location.hash;
+		if (hash) {
+			// Wait for page to render, then scroll
+			setTimeout(() => {
+				const element = document.querySelector(hash);
+				if (element) {
+					element.scrollIntoView({ behavior: "smooth", block: "start" });
+				}
+			}, 100);
+		}
+	}, []);
+	return (
+		<>
+			<Navigation />
+			<Hero />
+			
+			{/* About Section */}
+			<Section id="about" title="About Me">
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+					<motion.div
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6 }}
+					>
+					<Card>
+						<div className="p-8">
+							<h3 className="text-lg font-pixel text-pokemon-yellow mb-6 pokemon-glow uppercase">▶ Background</h3>
+							<p className="text-white/80 mb-4 leading-relaxed font-pixel text-xs md:text-sm">
+								I'm a Computer Engineering undergraduate at the National University of Singapore, 
+								currently working as an Embedded / SWE at ZeroshotData in San Francisco, where I build 
+								robotics software and embedded systems for autonomous navigation and data processing.
+							</p>
+							<p className="text-white/80 leading-relaxed font-pixel text-xs md:text-sm">
+								My expertise lies in robotics software development, including visual-inertial SLAM (ORB SLAM3), 
+								sensor fusion, embedded systems, and real-time pose estimation.
+							</p>
+						</div>
+					</Card>
+					</motion.div>
+					
+					<motion.div
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6, delay: 0.1 }}
+					>
+					<Card>
+						<div className="p-8">
+							<h3 className="text-lg font-pixel text-pokemon-yellow mb-6 pokemon-glow uppercase">▶ Education</h3>
+							<div className="space-y-6">
+								<div>
+									<div className="flex flex-col md:flex-row md:items-start justify-between mb-2 gap-2">
+										<div>
+											<p className="font-pixel text-white text-xs md:text-sm">National University of Singapore</p>
+											<p className="text-white/60 text-xs mt-1 font-pixel">B.Eng (Honors), Computer Engineering</p>
+										</div>
+										<span className="px-2 py-1 bg-pokemon-blue pixel-border text-xs text-white font-pixel whitespace-nowrap">
+											2023 — JUN 2026
+										</span>
+									</div>
+									<div className="mt-3 space-y-1">
+										<p className="text-xs text-pokemon-yellow font-pixel">GPA: 4.88/5.0</p>
+										<p className="text-xs text-white/60 font-pixel">Dean's List; Engineering Scholars Program</p>
+									</div>
+								</div>
+								<div className="pt-4 border-t-2 border-white/10">
+									<div className="flex flex-col md:flex-row md:items-start justify-between gap-2">
+										<div>
+											<p className="font-pixel text-white text-xs md:text-sm">Stanford University</p>
+											<p className="text-white/60 text-xs mt-1 font-pixel">Visiting Student (Exchange)</p>
+										</div>
+										<span className="px-2 py-1 bg-pokemon-red pixel-border text-xs text-white font-pixel whitespace-nowrap">
+											APR — JUN 2025
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</Card>
+					</motion.div>
+				</div>
+			</Section>
 
-      <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-      <div className="my-16 text-center animate-fade-in">
-        <h2 className="text-sm text-zinc-500 ">
-          I'm building{" "}
-          <Link
-            target="_blank"
-            href="https://github.com/zackjh/quicksheet"
-            className="underline duration-500 hover:text-zinc-300"
-          >
-            QuickSheet
-          </Link> to help STEM students build beautiful cheatsheets quick. You can view my resume {" "}
-          <Link
-            target="_blank"
-            href="Ryan_Resume.pdf"
-            className="underline duration-500 hover:text-zinc-300"
-          >
-            here
-          </Link> 
-          .
-        </h2>
-      </div>
-    </div>
-  );
+			<VisaInfo />
 
+			{/* Experience Section */}
+			<Section id="experience" title="Experience">
+				<ExperienceTimeline />
+			</Section>
+
+			{/* Projects Preview Section */}
+			<Section id="projects" title="Featured Projects">
+				<div className="mb-12">
+					<ProjectCarousel />
+				</div>
+				<div className="text-center">
+					<Link
+						href="/projects"
+						className="inline-flex items-center gap-2 px-8 py-4 bg-pokemon-blue text-white font-pixel text-xs md:text-sm pixel-border hover:bg-pokemon-darkblue transition-colors uppercase tracking-tighter"
+					>
+						▶ VIEW ALL PROJECTS
+						<svg
+							className="w-4 h-4"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth={2}
+								d="M17 8l4 4m0 0l-4 4m4-4H3"
+							/>
+						</svg>
+					</Link>
+				</div>
+			</Section>
+
+			{/* Skills Section */}
+			<Section id="skills" title="Skills">
+				<SkillsGrid />
+			</Section>
+		</>
+	);
 }
