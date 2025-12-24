@@ -5,6 +5,7 @@ import React from "react";
 export const VisaInfo: React.FC = () => {
 	return (
 		<motion.div
+			id="visa-info"
 			initial={{ opacity: 0, scale: 0.9 }}
 			whileInView={{ opacity: 1, scale: 1 }}
 			transition={{ duration: 0.5 }}

@@ -86,7 +86,7 @@ export default function Home() {
 											<p className="font-pixel text-white text-xs md:text-sm">Stanford University</p>
 											<p className="text-white/60 text-xs mt-1 font-pixel">Visiting Student (Exchange)</p>
 										</div>
-										<span className="px-2 py-1 bg-pokemon-red pixel-border text-xs text-white font-pixel whitespace-nowrap">
+										<span className="px-2 py-1 bg-pokemon-blue pixel-border text-xs text-white font-pixel whitespace-nowrap">
 											APR — JUN 2025
 										</span>
 									</div>

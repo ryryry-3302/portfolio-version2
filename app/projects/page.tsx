@@ -17,13 +17,17 @@ export default async function ProjectsPage() {
       (project) =>
         project.slug !== featured.slug &&
         project.slug !== top2.slug &&
-        project.slug !== top3.slug,
+        project.slug !== top3.slug &&
+        project.slug !== "rnz",
     )
     .sort(
       (a, b) =>
         new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
         new Date(a.date ?? Number.POSITIVE_INFINITY).getTime(),
     );
+
+  const rnz = allProjects.find((project) => project.slug === "rnz");
+  if (rnz) sorted.push(rnz);
 
   return (
     <div className="relative pb-16 min-h-screen">

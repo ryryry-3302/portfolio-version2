@@ -1,20 +1,23 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Particles from "./particles";
 
 export function Hero() {
 	return (
 		<section
 			id="home"
-			className="relative flex items-center justify-center min-h-screen overflow-hidden bg-pokemon-darkblue"
+			className="relative flex items-center justify-center min-h-screen overflow-hidden bg-black"
 		>
-			{/* Pokemon-style background */}
-			<div className="absolute inset-0 bg-pokemon-gradient opacity-50" />
-			<div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,222,0,0.15),transparent_70%)]" />
+			{/* Deep Space Background */}
+			<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-900 via-[#000000] to-black" />
+			<div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 			
-			{/* Retro grid pattern */}
-			<div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
-			
+			<Particles
+				className="absolute inset-0 -z-10 animate-fade-in"
+				quantity={100}
+			/>
+
 			{/* Content */}
 			<div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
 				<motion.div
@@ -25,7 +28,7 @@ export function Hero() {
 				>
 					<div className="inline-block px-6 py-3 bg-pokemon-red pixel-border-white mb-8 animate-pixel-bounce">
 						<span className="text-xs md:text-sm text-white font-pixel tracking-tighter">
-							VERSION 2.0 - 2025
+							VERSION 2.0 - 2026
 						</span>
 					</div>
 				</motion.div>
@@ -54,18 +57,28 @@ export function Hero() {
 					className="mb-12"
 				>
 					<p className="text-sm md:text-lg font-pixel text-pokemon-yellow mb-6 tracking-tighter">
-						ROBOTICS & EMBEDDED SOFTWARE ENGINEER
+						ROBOTICS & EMBEDDED ENGINEER
 					</p>
-					<div className="pokemon-textbox max-w-2xl mx-auto text-left">
-						<motion.div
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							transition={{ duration: 0.8, delay: 1.2 }}
-							className="mt-4 text-sm text-pokemon-blue font-pixel"
+					
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ duration: 0.8, delay: 1.2 }}
+						className="max-w-2xl mx-auto"
+					>
+						<button 
+							onClick={() => document.getElementById('visa-info')?.scrollIntoView({ behavior: 'smooth' })}
+							className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:border-pokemon-yellow/50 transition-colors cursor-pointer"
 						>
-							Singapore Citizen — eligible for H-1B1 (US–Singapore FTA)
-						</motion.div>
-					</div>
+							<span className="relative flex h-2 w-2">
+								<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pokemon-green opacity-75"></span>
+								<span className="relative inline-flex rounded-full h-2 w-2 bg-pokemon-green"></span>
+							</span>
+							<span className="text-xs md:text-sm text-white font-pixel">
+								Singapore Citizen — eligible for <span className="text-pokemon-yellow">H-1B1</span> (US–Singapore FTA)
+							</span>
+						</button>
+					</motion.div>
 				</motion.div>
 				
 				<motion.div

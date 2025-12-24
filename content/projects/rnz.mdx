@@ -1,0 +1,76 @@
+---
+title: RnZ
+description: A comprehensive 3D design tool for BTO renovation planning in Singapore.
+date: "2025-12-01"
+published: true
+repository: "ryryry-3302/RnZ"
+url: "https://github.com/ryryry-3302/RnZ"
+---
+
+### Introduction
+
+RnZ is a comprehensive 3D design tool specifically built for BTO (Build-To-Order) renovation planning in Singapore. It empowers homeowners to visualize their dream home with precision and ease.
+
+### Demo Video
+
+<video controls width="100%" style={{ borderRadius: '8px', marginTop: '2rem', marginBottom: '2rem', border: '2px solid #333' }}>
+  <source src="/RnZ.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+### Project Resources
+
+- [View Project PDF](/RnZ.pdf)
+- [GitHub Repository](https://github.com/ryryry-3302/RnZ)
+
+### Features
+
+#### 3D Designer
+- **Real-time 3D rendering** with shadows and lighting
+- **2D Floorplan editor** for precise room layout
+- **Furniture placement system** with drag-and-drop functionality
+- **Extensive furniture library** with BTO-specific items
+- **Room-by-room design** with accurate measurements
+- **Export designs** for contractor consultations
+
+#### Furniture Placing System
+The designer now includes a comprehensive furniture placing system:
+
+1. **Select Furniture**: Choose from the sidebar categories (Furniture, Doors, Windows, Sofas, Tables, Chairs, Storage, Lighting, Decor)
+2. **Place in 3D**: Click on a furniture item to enter placement mode, then click in the 3D view to place it
+3. **Edit Placed Items**: Click on placed furniture to open the context menu for:
+   - Resize dimensions (width, height, depth)
+   - Lock/unlock position
+   - Delete items
+4. **Visual Feedback**: Real-time indicators show placement status and item counts
+
+### How to Use Furniture Placing
+
+1. **Navigate to Designer**: Go to `/designer` page
+2. **Select Furniture Tab**: Click on the "Furniture" tab in the sidebar
+3. **Choose Category**: Select a furniture category from the filter buttons
+4. **Place Item**: 
+   - Click on a furniture item in the sidebar
+   - The system will switch to 3D view automatically
+   - Click anywhere in the 3D view to place the furniture
+   - The item will appear at the clicked location
+5. **Edit Placed Items**:
+   - Click on any placed furniture item to select it
+   - A context menu will appear on the right side
+   - Adjust dimensions, lock position, or delete the item
+
+### Technical Implementation
+
+The furniture placing system integrates with Blueprint3D and includes:
+
+- **Raycasting**: Converts mouse clicks to 3D coordinates
+- **Item Management**: Tracks placed items and their properties
+- **Event Handling**: Manages placement, selection, and deletion events
+- **State Management**: Maintains placement state and visual feedback
+
+### Technology Stack
+
+- **Framework**: Next.js 14
+- **3D Engine**: Three.js & Blueprint3D
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React

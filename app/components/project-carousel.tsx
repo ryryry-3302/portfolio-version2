@@ -18,7 +18,7 @@ interface Project {
 const projects: Project[] = [
 	{
 		slug: "flair-ai",
-		badge: "Winner — 1st Place",
+		badge: "1st Place $1500",
 		badgeColor: "text-orange-400",
 		date: "Mar 2025",
 		title: "Flair AI",
@@ -42,6 +42,24 @@ const projects: Project[] = [
 		title: "EMF Full Body Tracking",
 		description: "Developed 6-DOF pose estimation system using EMF with 3D coil antennas, achieving 1cm positional and 5-degree angular precision. Designed Helmholtz cage, built hardware, and trained ML models.",
 		tags: ["OnShape", "KiCad", "ML", "Embedded"],
+	},
+	{
+		slug: "leasy",
+		badge: "Full Stack",
+		badgeColor: "text-green-400",
+		date: "Sep 2025",
+		title: "Leasy",
+		description: "A Zillow-style lease takeover platform for students, interns, and exchange students looking for sublets in San Francisco. Features interactive maps, advanced filtering, and detailed listings.",
+		tags: ["Next.js", "Mapbox", "Tailwind", "TypeScript"],
+	},
+	{
+		slug: "rnz",
+		badge: "3D Design",
+		badgeColor: "text-purple-400",
+		date: "Dec 2025",
+		title: "RnZ - BTO Renovation",
+		description: "A comprehensive 3D design tool for BTO renovation planning in Singapore. Features real-time 3D rendering, floorplan editor, and furniture placement system.",
+		tags: ["Next.js", "Three.js", "Blueprint3D", "Tailwind"],
 	},
 ];
 
@@ -77,7 +95,7 @@ export function ProjectCarousel() {
 			{/* Navigation Buttons */}
 			<button
 				onClick={() => scroll("left")}
-				className={`absolute left-0 top-1/2 -translate-y-1/2 z-20 p-3 bg-pokemon-blue pixel-border transition-all ${
+				className={`absolute left-0 top-1/2 -translate-y-1/2 z-50 p-3 bg-pokemon-blue pixel-border transition-all ${
 					canScrollLeft
 						? "opacity-100 translate-x-2"
 						: "opacity-0 pointer-events-none"
@@ -87,7 +105,7 @@ export function ProjectCarousel() {
 			</button>
 			<button
 				onClick={() => scroll("right")}
-				className={`absolute right-0 top-1/2 -translate-y-1/2 z-20 p-3 bg-pokemon-blue pixel-border transition-all ${
+				className={`absolute right-0 top-1/2 -translate-y-1/2 z-50 p-3 bg-pokemon-blue pixel-border transition-all ${
 					canScrollRight
 						? "opacity-100 -translate-x-2"
 						: "opacity-0 pointer-events-none"
