@@ -1,0 +1,57 @@
+---
+title: WatchDocks
+description: A smart surveillance system that detects bike theft in real-time using computer vision, alerting users instantly when suspicious activity is observed.
+date: "2025-04-20"
+published: true
+repository: "ThatGirlJam/WatchDocks"
+url: "https://devpost.com/software/watchdocks"
+---
+
+### Introduction
+
+WatchDocks is a smart surveillance system designed to tackle the pervasive issue of bike theft. Born from the shared frustration of losing bikes on campus, it combines real-time computer vision with instant alerts to protect cyclists' property.
+
+### Project Overview
+
+WatchDocks uses a camera system powered by computer vision to monitor bike racks. It detects suspicious behavior—such as lock tampering or loitering—and triggers a two-pronged response: a loud siren to deter the thief and an immediate notification to the bike owner's phone.
+
+### Demo Video
+
+<iframe
+  width="100%"
+  height="400"
+  src="https://www.youtube.com/embed/Xdf2AOlGvlo"
+  title="WatchDocks Demo"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+  style={{ borderRadius: '8px', marginTop: '2rem', marginBottom: '2rem', border: '2px solid #333' }}
+></iframe>
+
+### Key Features
+
+- **Real-time Theft Detection:** Uses YOLOv8 and computer vision to identify suspicious activities like lock cutting or tampering.
+- **Instant Alerts:** Sends immediate notifications to the owner's mobile device via a React Native app (or web dashboard).
+- **Active Deterrence:** Triggers a loud siren when theft is detected to scare off perpetrators.
+- **Context-Aware Analysis:** Leverages the Gemini API to analyze activity patterns and generate context-aware warnings.
+- **Secure Verification:** Integrates Auth0 for secure user authentication and role-based access control.
+
+### How It Works
+
+1.  **Monitoring:** Cameras feed video to a Flask backend.
+2.  **Detection:** The system runs YOLOv8 models trained on RoboFlow to detect theft behaviors.
+3.  **Alerting:** If suspicious activity is confirmed, the system triggers a siren and sends an alert to the MongoDB database.
+4.  **Notification:** The React frontend polls for alerts and notifies the user.
+5.  **Verification:** Users can verify their identity to dismiss false alarms.
+
+### Technology Stack
+
+- **Frontend:** React.js, Tailwind CSS
+- **Backend:** Flask (Python)
+- **AI/ML:** YOLOv8, RoboFlow, Gemini API
+- **Database:** MongoDB
+- **Authentication:** Auth0
+
+### Challenges & Learnings
+
+One of the main challenges was reducing false positives in motion detection—distinguishing between a student unlocking their bike and a thief tampering with a lock. We fine-tuned sensitivity thresholds and applied filtering logic to improve accuracy. We also learned the importance of low-latency processing for real-time security systems.

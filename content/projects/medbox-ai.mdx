@@ -1,0 +1,52 @@
+---
+title: MedBox AI
+description: An intelligent "black box" for medical and dental procedures that uses computer vision to automatically record, segment, and analyze every step of an operation.
+date: "2025-10-20"
+published: true
+repository: "slye20/CalHacksWinner"
+url: "https://devpost.com/software/medbox-ai"
+---
+
+### Introduction
+
+MedBox AI is an intelligent "black box" system designed for medical and dental procedures. Inspired by aviation black boxes, it provides a transparent, objective system to capture and analyze procedural data, enhancing accountability and supporting quality assurance in healthcare.
+
+### Project Overview
+
+MedBox AI uses computer vision to automatically record, segment, and analyze procedure videos in real-time. It detects key surgical or dental steps, identifies tool usage, and flags deviations from standard protocols. The result is a secure, timestamped record that serves as a reliable reference for clinicians, insurers, and patients.
+
+### Demo Video
+
+<iframe
+  width="100%"
+  height="400"
+  src="https://www.youtube.com/embed/kneHb78bmCA"
+  title="MedBox AI Demo"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+  style={{ borderRadius: '8px', marginTop: '2rem', marginBottom: '2rem', border: '2px solid #333' }}
+></iframe>
+
+### Key Features
+
+- **Automated Segmentation:** Uses computer vision to detect and segment key steps in medical procedures.
+- **Tool Detection:** Identifies specific surgical and dental tools used during operations.
+- **Deviation Flagging:** Automatically flags deviations from standard medical protocols.
+- **Secure Logging:** Creates a timestamped, immutable record for medico-legal documentation.
+- **Auditable Dashboard:** Provides a visual timeline of events for easy review by clinicians.
+
+### How It Built It
+
+We integrated **OpenCV** computer vision models for step segmentation and tool detection with **Chroma** for vector storage and retrieval of procedural data. The frontend is built with **Next.js** and **Shadcn/UI**, providing a clean dashboard for reviewing annotated procedures. The backend manages real-time inference and report generation.
+
+### Technology Stack
+
+- **Frontend:** Next.js, Shadcn/UI, Tailwind CSS
+- **Backend:** Python, Flask
+- **AI/CV:** OpenCV, Chroma (Vector DB)
+- **Video:** NextVideo
+
+### Challenges & Learnings
+
+Obtaining clean, annotated datasets for specific surgical tools was a significant challenge. We also had to balance the complexity of medical workflows with the need for an intuitive user interface. We learned that effective medico-legal documentation requires not just AI accuracy, but absolute data integrity.

@@ -105,8 +105,20 @@ const components = {
 	}: React.ImgHTMLAttributes<HTMLImageElement>) => (
 		// eslint-disable-next-line @next/next/no-img-element
 		<img
-			className={clsx("rounded-md border border-zinc-200", className)}
+			className={clsx("rounded-md border border-zinc-200 relative z-[10000]", className)}
 			alt={alt}
+			{...props}
+		/>
+	),
+	video: ({ className, ...props }: React.VideoHTMLAttributes<HTMLVideoElement>) => (
+		<video
+			className={clsx("relative z-[10000]", className)}
+			{...props}
+		/>
+	),
+	iframe: ({ className, ...props }: React.IframeHTMLAttributes<HTMLIFrameElement>) => (
+		<iframe
+			className={clsx("relative z-[10000]", className)}
 			{...props}
 		/>
 	),
@@ -163,7 +175,9 @@ const components = {
 			{...props}
 		/>
 	),
-	Image,
+	Image: ({ className, ...props }: any) => (
+		<Image className={clsx("relative z-[10000]", className)} {...props} />
+	),
 };
 
 interface MdxProps {
