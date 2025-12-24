@@ -95,6 +95,15 @@ export function Hero() {
 						<div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
 					</Link>
 					<Link
+						href="/Ryan_Resume.pdf"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="group relative px-8 py-4 bg-pokemon-red text-white font-pixel text-xs md:text-sm pixel-border hover:bg-red-700 transition-colors"
+					>
+						<span className="relative z-10">▶ DOWNLOAD RESUME</span>
+						<div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+					</Link>
+					<Link
 						href="https://github.com/ryryry-3302"
 						target="_blank"
 						rel="noopener noreferrer"

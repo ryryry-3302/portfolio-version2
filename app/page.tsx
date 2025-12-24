@@ -137,6 +137,37 @@ export default function Home() {
 			<Section id="skills" title="Skills">
 				<SkillsGrid />
 			</Section>
+
+			{/* CTA Section */}
+			<section className="py-20 px-6 text-center">
+				<div className="max-w-3xl mx-auto">
+					<div className="pokemon-textbox p-8 md:p-12">
+						<h3 className="text-xl md:text-2xl font-pixel text-pokemon-yellow mb-6 pokemon-glow uppercase">
+							Ready to Collaborate?
+						</h3>
+						<p className="text-white/80 font-pixel text-xs md:text-sm mb-8 leading-relaxed">
+							I'm currently looking for opportunities in Robotics, Embedded Systems, and Full Stack Development.
+							Check out my resume or get in touch!
+						</p>
+						<div className="flex flex-col md:flex-row items-center justify-center gap-6">
+							<Link
+								href="/contact"
+								className="px-8 py-4 bg-pokemon-blue text-white font-pixel text-xs md:text-sm pixel-border hover:bg-pokemon-darkblue transition-colors uppercase tracking-tighter w-full md:w-auto"
+							>
+								▶ CONTACT ME
+							</Link>
+							<Link
+								href="/Ryan_Resume.pdf"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="px-8 py-4 bg-pokemon-red text-white font-pixel text-xs md:text-sm pixel-border hover:bg-red-700 transition-colors uppercase tracking-tighter w-full md:w-auto"
+							>
+								▶ DOWNLOAD RESUME
+							</Link>
+						</div>
+					</div>
+				</div>
+			</section>
 		</>
 	);
 }
