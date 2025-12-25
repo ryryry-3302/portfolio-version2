@@ -31,7 +31,9 @@ const experiences: ExperienceItem[] = [
 		location: "Singapore",
 		period: "May 2024 — Aug 2024",
 		points: [
+			"Engineered frequency synthesizer using Verilog and GOWIN IP cores on Tang Nano 20K, achieving 6.5–9.0 ns precision for 1PPS synchronization",
 			"Developed autonomous data-measurement web server using Python (PyVISA, Pandas, Dash) on OrangePi 3B+ to collect, analyze, and visualize lab instrument data",
+			"Resolved Linux kernel driver compatibility issues for NI-USB-HS GPIB interface on OrangePi architecture, enabling robust instrument control",
 		],
 	},
 	{
