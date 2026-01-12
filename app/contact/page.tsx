@@ -26,7 +26,7 @@ const socials = [
 	},
 	{
 		icon: <FileText size={24} />,
-		href: "/Ryan_Resume.pdf",
+		href: "/embedded_resume.pdf",
 		label: "Resume",
 		handle: "Download Resume",
 	},

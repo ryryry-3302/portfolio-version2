@@ -157,7 +157,7 @@ export default function Home() {
 								▶ CONTACT ME
 							</Link>
 							<Link
-								href="/Ryan_Resume.pdf"
+								href="/embedded_resume.pdf"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="px-8 py-4 bg-pokemon-red text-white font-pixel text-xs md:text-sm pixel-border hover:bg-red-700 transition-colors uppercase tracking-tighter w-full md:w-auto"
