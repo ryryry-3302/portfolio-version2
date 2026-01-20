@@ -5,6 +5,7 @@ import { Card } from "./card";
 interface ExperienceItem {
 	title: string;
 	company: string;
+	companyUrl?: string;
 	location: string;
 	period: string;
 	points: string[];
@@ -14,6 +15,7 @@ const experiences: ExperienceItem[] = [
 	{
 		title: "Embedded / SWE",
 		company: "ZeroshotData",
+		companyUrl: "https://zeroshotdata.com/",
 		location: "San Francisco, CA",
 		period: "Jan 2025 — Present",
 		points: [
@@ -28,6 +30,7 @@ const experiences: ExperienceItem[] = [
 	{
 		title: "SWE / FPGA Intern",
 		company: "A*STAR — National Metrology Centre",
+		companyUrl: "https://www.a-star.edu.sg/nmc",
 		location: "Singapore",
 		period: "May 2024 — Aug 2024",
 		points: [
@@ -39,6 +42,7 @@ const experiences: ExperienceItem[] = [
 	{
 		title: "SWE Intern",
 		company: "HolyWally",
+		companyUrl: "https://www.holywally.com/",
 		location: "Singapore",
 		period: "Apr 2023 — Jun 2023",
 		points: [
@@ -67,9 +71,20 @@ export function ExperienceTimeline() {
 									<h3 className="text-lg md:text-xl font-pixel text-pokemon-yellow mb-2 pokemon-glow uppercase">
 										{exp.title}
 									</h3>
-									<p className="text-sm md:text-base text-white font-pixel mb-2">
-										{exp.company}
-									</p>
+									<div className="text-sm md:text-base text-white font-pixel mb-2">
+										{exp.companyUrl ? (
+											<a
+												href={exp.companyUrl}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="hover:text-pokemon-yellow transition-colors duration-300 border-b-2 border-transparent hover:border-pokemon-yellow inline-block"
+											>
+												{exp.company} ↗
+											</a>
+										) : (
+											exp.company
+										)}
+									</div>
 									<p className="text-xs text-gray-300 font-pixel">
 										{exp.location}
 									</p>
