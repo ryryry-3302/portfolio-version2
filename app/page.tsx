@@ -160,6 +160,7 @@ export default function Home() {
 								href="/embedded_resume.pdf"
 								target="_blank"
 								rel="noopener noreferrer"
+								download="ryan_leong_embedded_swe_resume.pdf"
 								className="px-8 py-4 bg-pokemon-red text-white font-pixel text-xs md:text-sm pixel-border hover:bg-red-700 transition-colors uppercase tracking-tighter w-full md:w-auto"
 							>
 								▶ DOWNLOAD RESUME

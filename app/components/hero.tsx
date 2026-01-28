@@ -98,6 +98,7 @@ export function Hero() {
 						href="/embedded_resume.pdf"
 						target="_blank"
 						rel="noopener noreferrer"
+						download="ryan_leong_embedded_swe_resume.pdf"
 						className="group relative px-8 py-4 bg-pokemon-red text-white font-pixel text-xs md:text-sm pixel-border hover:bg-red-700 transition-colors"
 					>
 						<span className="relative z-10">▶ DOWNLOAD RESUME</span>
