@@ -64,7 +64,7 @@ export default function Contact() {
 									target={s.href.startsWith("http") || s.href.startsWith("/") ? "_blank" : undefined}
 									rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
 									download={s.label === "Resume" ? true : undefined}
-									className="p-6 relative flex flex-col items-center gap-4 duration-700 group md:gap-6 md:p-8"
+									className="py-6 relative flex flex-col items-center gap-4 duration-700 group md:gap-6 md:py-8"
 								>
 									<span className="relative z-10 flex items-center justify-center w-16 h-16 bg-pokemon-blue pixel-border text-white group-hover:bg-pokemon-darkblue transition-all">
 										{s.icon}
