@@ -6,13 +6,15 @@ import "./mdx.css";
 
 export const revalidate = 60;
 
-type Props = {
-  params: {
-    slug: string;
-  };
+type Params = {
+  slug: string;
 };
 
-export async function generateStaticParams(): Promise<Props["params"][]> {
+type Props = {
+  params: Promise<Params>;
+};
+
+export async function generateStaticParams(): Promise<Params[]> {
   return allProjects
     .filter((p) => p.published)
     .map((p) => ({
@@ -21,7 +23,7 @@ export async function generateStaticParams(): Promise<Props["params"][]> {
 }
 
 export default async function PostPage({ params }: Props) {
-  const slug = params?.slug;
+  const { slug } = await params;
   const project = allProjects.find((project) => project.slug === slug);
 
   if (!project) {
