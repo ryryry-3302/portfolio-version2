@@ -1,7 +1,7 @@
 {
   "name": "chronark.com",
   "version": "0.1.0",
-  "packageManager": "pnpm@11.7.0",
+  "packageManager": "pnpm@9.15.9",
   "private": true,
   "scripts": {
     "dev": "next dev",
