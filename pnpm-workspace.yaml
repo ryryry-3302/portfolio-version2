@@ -1,0 +1,8 @@
+allowBuilds:
+  contentlayer: true
+  esbuild: true
+  protobufjs: true
+  rome: true
+
+overrides:
+  '@grpc/grpc-js': ^1.14.4
