@@ -10,5 +10,7 @@ allowBuilds:
 
 overrides:
   '@grpc/grpc-js': ^1.14.4
-  protobufjs: ^7.6.3
+  protobufjs: ^7.6.4
+  esbuild: ^0.28.1
+  braces: ^3.0.3
   estree-util-value-to-estree: ^3.3.3

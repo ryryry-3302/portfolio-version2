@@ -35,11 +35,6 @@ export default async function PostPage({ params }: Props) {
       <Header project={project} />
 
       <article className="px-4 py-12 mx-auto prose prose-invert prose-quoteless max-w-4xl">
-        <div className="pokemon-textbox mb-4">
-          <p className="font-pixel text-xs md:text-sm text-pokemon-blue">
-            ▶ PROJECT DATA LOADED...
-          </p>
-        </div>
         <Mdx code={project.body.code} />
       </article>
     </div>
