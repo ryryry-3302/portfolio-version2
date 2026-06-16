@@ -3,6 +3,9 @@ allowBuilds:
   esbuild: true
   protobufjs: true
   rome: true
+  sharp: true
 
 overrides:
   '@grpc/grpc-js': ^1.14.4
+  protobufjs: ^7.6.1
+  estree-util-value-to-estree: ^3.3.3
