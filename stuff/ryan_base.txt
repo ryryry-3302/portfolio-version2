@@ -1,0 +1,184 @@
+%-------------------------
+% Resume in LaTeX
+% Author : Jake Gutierrez (adapted)
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generated PDF is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Leong Ko Ryan Jasper} \\ \vspace{5pt}
+    \href{mailto:ryan.leong@u.nus.edu}{\underline{ryan.leong@u.nus.edu}} $|$ 
+    \href{https://www.linkedin.com/in/ryanjasperkoleong/}{\underline{https://www.linkedin.com/in/ryanjasperkoleong/}} $|$
+    \href{https://github.com/ryryry-3302}{\underline{https://github.com/ryryry-3302}} \\ \vspace{5pt}
+    Driven computer engineer passionate about integrating software and hardware to build solutions to tackle tomorrow’s problems. Interested in Automation, Sustainability, and Robotics.
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {National University of Singapore}{Aug 2023 -- Aug 2026}
+      {Bachelor of Engineering (Honors), Major in Computer Engineering}{Singapore}
+        \resumeItemListStart
+            \resumeItem{GPA: 4.79/5.0}
+            \resumeItem{Enrolled under the Engineering Scholars Program}
+        \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {DevOps / Embedded Engineer}{Jan 2024 -- Present}
+      {Anderson Robotics Inc.}{San Francisco, CA}
+      \resumeItemListStart
+          \resumeItem{Cloud deployment with GCS, GKE, GCE, Kubernetes, and Terraform}
+          \resumeItem{Developing video processing apps with FFmpeg, OpenCV, and Python}
+          \resumeItem{Camera calibration using Kalibr}
+          \resumeItem{Developing in-house visual–inertial SLAM system with C++ and Python}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {FPGA / Software Engineer Intern}{May 2024 -- Aug 2024}
+      {A*STAR — National Metrology Centre}{Singapore}
+      \resumeItemListStart
+          \resumeItem{Developed autonomous data-measurement web server to collect data from lab instruments and perform analysis/visualisation using Python (PyVISA, Pandas, Dash) on OrangePi 3B+.}
+          \resumeItem{Engineered a frequency synthesizer using Verilog and GOWIN IP cores to synchronize with CSACs on the Tang Nano 20K, achieving 6.5–9.0 ns precision.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Product Owner Intern}{Apr 2023 -- Jun 2023}
+      {HolyWally}{Singapore}
+      \resumeItemListStart
+        \resumeItem{Spearheaded internal tools using Python, SQL, and Superblocks with PostgreSQL, the HolyWally backend, and third-party APIs, consolidating data access for \textasciitilde100 users in a single dashboard.}
+        \resumeItem{Led QA, designing Postman calls to interface with third-party APIs (episode6) and collaborating with backend engineers to resolve UAT bugs.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\href{https://github.com/ryryry-3302/flare.ai}{\underline{\textbf{Flair AI}}} $|$ \emph{AI writing assistant; Twilio, Brainbase}}{2025}
+    \resumeItemListStart
+      \resumeItem{\textbf{Winner (1st place, \$1{,}500)} — AI for Good Hackathon, San Francisco.}
+      \resumeItem{Built for non-profit \textbf{826 Valencia}: end-to-end app for essay text extraction, \textbf{automated grading} using 826’s rubrics, live writing \textbf{metrics}, and advanced grammar checks to support \textasciitilde400 students.}
+      \resumeItem{Integrated \textbf{Brainbase} and \textbf{Twilio} to deliver a real-time \textbf{AI voice agent} providing feedback in \textbf{English and Spanish}.}
+      \resumeItem{Shipped in a 3-person team (with Manoj Narender and Yuxuan Shan); \href{https://www.youtube.com/live/ia1Ee2U0DO8?t=1625}{\underline{demo video}}.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\href{https://github.com/zackjh/quicksheet}{\underline{\textbf{QuickSheet}}} $|$ \emph{Electron, TypeScript, React, Tailwind, Jest}}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{Cross-platform word processor to help STEM students build quick, clean cheat sheets.}
+      \resumeItem{Supports code syntax highlighting, tables, rich text, image importing, and \LaTeX{} equations.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\href{https://ryan-leong-portfolio.vercel.app/projects/remote-controlled-robot}{\underline{\textbf{Remote-controlled Robot with SLAM}}} $|$ \emph{Bare-metal Programming, C++, ROS2}}{Mar 2024 -- Apr 2024}
+    \resumeItemListStart
+      \resumeItem{Implemented 4-direction movement, LCD text display, color identification, and mapping using LiDAR and RViz.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small\item{
+      \textbf{Software}{: C/C++, Java, TypeScript/JavaScript (React/Electron), SQL (PostgreSQL), Python (Flask/Django), Git, VS Code, Linux} \\
+      \textbf{Hardware}{: Verilog/SystemVerilog, Microcontrollers/FPGA (Arduino, Raspberry Pi, Basys-3, Tang Nano), SLAM/LiDAR, RTL design, circuit design, soldering} \\
+      \textbf{Portfolio}{: \href{https://ryan-leong-portfolio.vercel.app/}{\underline{https://ryan-leong-portfolio.vercel.app/}}}
+    }
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}

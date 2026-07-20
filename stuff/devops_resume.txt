@@ -1,0 +1,189 @@
+%-------------------------
+% Resume in LaTeX - DevOps Variant
+% Author : Jake Gutierrez (adapted)
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-0.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-12pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+% Ensure that generated PDF is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-4pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Leong Ko Ryan Jasper} \\ \vspace{2pt}
+    \small
+    \href{mailto:ryan.leong@u.nus.edu}{\underline{ryan.leong@u.nus.edu}} $|$ 
+    \href{https://www.linkedin.com/in/ryanjasperkoleong/}{\underline{linkedin.com/in/ryanjasperkoleong}} $|$
+    \href{https://github.com/ryryry-3302}{\underline{github.com/ryryry-3302}} $|$
+    \href{https://ryan-leong-portfolio.vercel.app/}{\underline{ryan-leong-portfolio.vercel.app}} \\ \vspace{2pt}
+    {\small \textit{Singapore Citizen — eligible for H-1B1 (US–Singapore FTA), a no-lottery work visa similar to TN}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {National University of Singapore}{Aug 2023 -- Aug 2026}
+      {Bachelor of Engineering (Honors), Major in Computer Engineering}{Singapore}
+        \resumeItemListStart
+            \resumeItem{GPA: 4.88/5.0 $|$ Dean's List; Enrolled under the Engineering Scholars Program}
+        \resumeItemListEnd
+    \resumeSubheading
+      {Stanford University}{Apr 2025 -- Jun 2025}
+      {Visiting Student, Spring Quarter (Exchange)}{Stanford, CA}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {DevOps Engineer}{Jan 2025 -- Present}
+      {ZeroshotData}{San Francisco, CA}
+      \resumeItemListStart
+          \resumeItem{Architected and deployed production cloud infrastructure on GCP using Terraform, GKE, Cloud SQL, and VPC, reducing environment setup time from 3 hours to 15 minutes}
+          \resumeItem{Implemented scalable video processing pipelines with GPU-accelerated Kubernetes autoscaling, reducing pipeline costs by 50\%}
+          \resumeItem{Configured GitHub Actions CI/CD pipelines and deployed Tailscale mesh VPN with ACL enforcement, replacing Cloudflare tunnels}
+          \resumeItem{Managed infrastructure as code with Terraform, implementing staging/production splits and version-controlled deployments}
+          \resumeItem{Developed and optimized ORB-SLAM3 visual-inertial odometry pipelines, integrating stereo camera feeds and IMU data for real-time robotics navigation}
+          \resumeItem{Engineered EMF tracking system infrastructure, collecting and processing large-scale training datasets for 6-DOF pose estimation models}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {SWE Intern}{May 2024 -- Aug 2024}
+      {A*STAR — National Metrology Centre}{Singapore}
+      \resumeItemListStart
+          \resumeItem{Deployed autonomous data collection server on OrangePi 3B+ running Linux, handling driver integration for NI-USB-HS GPIB interfaces and exposing data via a Dash-based web dashboard}
+          \resumeItem{Developed Python middleware to interface with lab instruments, enabling automated data logging and real-time visualization for researchers}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {SWE Intern}{Apr 2023 -- Jun 2023}
+      {HolyWally}{Singapore}
+      \resumeItemListStart
+        \resumeItem{Built internal tools using Python, SQL, and Superblocks with PostgreSQL, integrating with backend APIs and third-party services for \textasciitilde100 users}
+        \resumeItem{Led QA automation and API integration testing using Postman, collaborating with backend teams to resolve critical UAT bugs for fintech dashboard release}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\href{https://github.com/ryryry-3302/flare.ai}{\underline{\textbf{Flair AI}}} $|$ \emph{AI writing assistant; React, Tiptap, Twilio, Brainbase, Gemini, Tailwind}}{2025}
+    \resumeItemListStart
+      \resumeItem{\textbf{Winner (1st place, \$1{,}500)} — AI for Good Hackathon, San Francisco. Built end-to-end application with automated grading and AI voice agent integration for \textasciitilde400 students}
+      \resumeItem{Architected scalable backend infrastructure using \textbf{Twilio}, \textbf{Brainbase}, and \textbf{Gemini}; built frontend with \textbf{React}, \textbf{Tiptap}, and \textbf{Tailwind CSS}}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\href{https://devpost.com/software/watchdocks}{\underline{\textbf{WatchDocks}}} $|$ \emph{Smart Surveillance System; Flask, YOLOv8, MongoDB, Auth0}}{2025}
+    \resumeItemListStart
+      \resumeItem{Developed a real-time surveillance system using \textbf{YOLOv8} for object detection and \textbf{Flask} for backend API services}
+      \resumeItem{Implemented secure authentication with \textbf{Auth0} and data storage with \textbf{MongoDB}, ensuring scalable and secure data management}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\href{https://github.com/ryryry-3302/RyNance}{\underline{\textbf{RyNance}}} $|$ \emph{Financial Literacy Platform; Flask, SQLite, Chart.js, Bootstrap}}{2022}
+    \resumeItemListStart
+      \resumeItem{Developed full-stack financial literacy platform using \textbf{Flask}, \textbf{SQLite}, and \textbf{Chart.js}; implemented secure user authentication and responsive frontend with \textbf{Bootstrap}}
+      \resumeItem{Built interactive tools including retirement calculators and budget planners, deploying the application for public access}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small\item{
+      \textbf{DevOps \& Cloud}{: GCP (GKE, Cloud Run, Pub/Sub, Artifact Registry, IAM), Kubernetes, Terraform, Docker, GitHub Actions, CI/CD, Tailscale, Linux} \\
+      \textbf{Backend \& Systems}{: Python, Flask, PostREST, Swagger, PostgreSQL, MQTT, C++, Bash Scripting} \\
+      \textbf{Tools \& Platforms}{: Git, VS Code, Jira, Confluence, Superblocks, Postman}
+    }
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}

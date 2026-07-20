@@ -1,0 +1,188 @@
+%-------------------------
+% Resume in LaTeX - Embedded/Robotics Variant
+% Author : Jake Gutierrez (adapted)
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-0.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-12pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+% Ensure that generated PDF is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-4pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Leong Ko Ryan Jasper} \\ \vspace{2pt}
+    \small
+    \href{mailto:ryan.leong@u.nus.edu}{\underline{ryan.leong@u.nus.edu}} $|$ 
+    \href{https://www.linkedin.com/in/ryanjasperkoleong/}{\underline{linkedin.com/in/ryanjasperkoleong}} $|$
+    \href{https://github.com/ryryry-3302}{\underline{github.com/ryryry-3302}} $|$
+    \href{https://ryan-leong-portfolio.vercel.app/}{\underline{ryan-leong-portfolio.vercel.app}} \\ \vspace{2pt}
+    {\small \textit{Singapore Citizen — eligible for H-1B1 (US–Singapore FTA), a no-lottery work visa similar to TN}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {National University of Singapore}{Aug 2023 -- Aug 2026}
+      {Bachelor of Engineering (Honors), Major in Computer Engineering}{Singapore}
+        \resumeItemListStart
+            \resumeItem{GPA: 4.88/5.0 $|$ Dean's List; Enrolled under the Engineering Scholars Program}
+        \resumeItemListEnd
+    \resumeSubheading
+      {Stanford University}{Apr 2025 -- Jun 2025}
+      {Visiting Student, Spring Quarter (Exchange)}{Stanford, CA}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Embedded / Robotics SWE}{Jan 2025 -- Present}
+      {ZeroshotData}{San Francisco, CA}
+      \resumeItemListStart
+          \resumeItem{Designed and assembled PCBs for EMF tracking emitter/receiver system using KiCad, programming STM32 microcontrollers; designed Helmholtz cage in OnShape/CAD with SCPI automation on OrangePi}
+          \resumeItem{Achieved 1cm positional and 5-degree angular precision for 6-DOF tracking system through custom hardware design and machine learning model training}
+          \resumeItem{Optimized ORB-SLAM3 for stereo camera setups, implementing sensor fusion with IMU data to enable robust real-time localization on embedded platforms}
+          \resumeItem{Set up Piper 6 DOF robotic arms and Raspberry Pi Zeros for automated training data collection and puppet gripper control, enabling large-scale dataset generation for deep learning models}
+          \resumeItem{Integrated OAK-D-WIDE stereo cameras with DepthAI C++ bindings, implementing timestamp drift correction and container lifecycle management for high-bitrate H.264 streams}
+          \resumeItem{Performed multi-camera intrinsic calibration and joint calibration with sensor integration using Kalibr to ensure high-fidelity stereo vision for the OAK-D system}
+          \resumeItem{Built battery monitoring service in C++ with I²C debugging and MQTT publishing; developed OTA firmware update framework for Wi-Fi-based microcontroller updates}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Embedded Engineer Intern}{May 2024 -- Aug 2024}
+      {A*STAR — National Metrology Centre}{Singapore}
+      \resumeItemListStart
+          \resumeItem{Engineered frequency synthesizer using Verilog and GOWIN IP cores on Tang Nano 20K, achieving 6.5–9.0 ns precision; developed autonomous data-measurement web server using Python on OrangePi 3B+}
+          \resumeItem{Resolved Linux kernel driver compatibility issues for NI-USB-HS GPIB interface on OrangePi architecture; built robust Python middleware for instrument control}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\href{https://ryan-leong-portfolio.vercel.app/projects/flair-ai}{\underline{\textbf{Flair AI}}} $|$ \emph{Next.js, Python, OpenAI API}}{2025}
+    \resumeItemListStart
+      \resumeItem{Developed AI writing assistant for non-profit 826 Valencia, winning 1st place (\$1,500) at AI for Good Hackathon; provides automated grading and feedback to support ~400 students}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\href{https://ryan-leong-portfolio.vercel.app/projects/remote-controlled-robot}{\underline{\textbf{Remote-controlled Robot with SLAM}}} $|$ \emph{Bare-metal Programming, C++, ROS2}}{Mar 2024 -- Apr 2024}
+    \resumeItemListStart
+      \resumeItem{Designed ROS 2-based robotic system integrating LiDAR, motor control, and real-time mapping with sensor fusion for autonomous navigation}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\href{https://ryan-leong-portfolio.vercel.app/projects/rtx-rtos-car}{\underline{\textbf{RTX RTOS Car}}} $|$ \emph{Real-Time OS, C, FRDM KL25Z, ESP32, KEIL RTX}}{2024}
+    \resumeItemListStart
+      \resumeItem{Developed multi-threaded real-time control system for robotic car using \textbf{KEIL RTX RTOS} with priority-based scheduling for deterministic motor control}
+      \resumeItem{Integrated \textbf{ESP32} via UART for Bluetooth communication, enabling low-latency remote control with a PS4 controller}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\href{https://github.com/ryryry-3302/FPGA_Street_Fighter}{\underline{\textbf{FPGA Street Fighter}}} $|$ \emph{Verilog, Basys 3 FPGA, Digital Design}}{2024}
+    \resumeItemListStart
+      \resumeItem{Architected 2-player arcade game on \textbf{Basys 3 FPGA} using \textbf{Verilog}; implemented custom drivers for OLED display, audio PWM generation, and UART-based multiplayer synchronization}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small\item{
+      \textbf{Embedded \& Hardware}{: Verilog/SystemVerilog, FPGA (Basys-3, Tang Nano), Microcontrollers (STM32, ESP32, Arduino, Raspberry Pi, Raspberry Pi Zero, OrangePi), FreeRTOS, I²C, SPI, CAN, UVC, RTL design, KiCad, PCB design} \\
+      \textbf{Robotics \& Systems}{: C/C++, ROS 2, SLAM, LiDAR, Linux, Docker, Git, Real-time systems, MQTT, DepthAI, 6 DOF arms} \\
+      \textbf{Test \& Instrumentation}{: SCPI, GPIB/VISA, lab automation, measurement pipelines} \\
+      \textbf{CAD \& Simulation}{: OnShape, CAD, Electromagnetic simulation} \\
+      \textbf{Computer Vision \& Cloud}{: OpenCV, FFmpeg, Python, Kalibr, GCP, Kubernetes, Terraform}
+    }
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}

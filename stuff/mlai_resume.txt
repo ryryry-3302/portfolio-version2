@@ -1,0 +1,187 @@
+%-------------------------
+% Resume in LaTeX - ML/AI Variant
+% Author : Jake Gutierrez (adapted)
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-0.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-12pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+% Ensure that generated PDF is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-4pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Leong Ko Ryan Jasper} \\ \vspace{2pt}
+    \small
+    \href{mailto:ryan.leong@u.nus.edu}{\underline{ryan.leong@u.nus.edu}} $|$ 
+    \href{https://www.linkedin.com/in/ryanjasperkoleong/}{\underline{linkedin.com/in/ryanjasperkoleong}} $|$
+    \href{https://github.com/ryryry-3302}{\underline{github.com/ryryry-3302}} $|$
+    \href{https://ryan-leong-portfolio.vercel.app/}{\underline{ryan-leong-portfolio.vercel.app}} \\ \vspace{2pt}
+    {\small \textit{Singapore Citizen — eligible for H-1B1 (US–Singapore FTA), a no-lottery work visa similar to TN}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {National University of Singapore}{Aug 2023 -- Aug 2026}
+      {Bachelor of Engineering (Honors), Major in Computer Engineering}{Singapore}
+        \resumeItemListStart
+            \resumeItem{GPA: 4.88/5.0 $|$ Dean's List; Enrolled under the Engineering Scholars Program}
+        \resumeItemListEnd
+    \resumeSubheading
+      {Stanford University}{Apr 2025 -- Jun 2025}
+      {Visiting Student, Spring Quarter (Exchange)}{Stanford, CA}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {CV / ML Engineer}{Jan 2025 -- Present}
+      {ZeroshotData}{San Francisco, CA}
+      \resumeItemListStart
+          \resumeItem{Optimized ORB SLAM3 system for improved accuracy and real-time performance using computer vision algorithms and sensor fusion in C++ and Python}
+          \resumeItem{Built EMF-based full body tracking system: trained and tested deep learning models achieving $\pm$1 cm positional and $\pm$5$^\circ$ rotational precision}
+          \resumeItem{Automated camera intrinsic calibration workflows using Kalibr, streamlining multi-camera setup and improving calibration accuracy for robotics perception systems}
+          \resumeItem{Processed 100+ hours of gripper trajectory data for multi-modal dataset capture, enabling new training modalities for client robotic policies}
+          \resumeItem{Integrated OAK-D-WIDE stereo cameras with DepthAI C++ bindings for real-time H.264 video processing and advanced computer vision pipelines}
+          \resumeItem{Deployed ML/AI workloads on GCP using Kubernetes and containerized environments, reducing pipeline costs by 50\% after first month}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {SWE Intern}{May 2024 -- Aug 2024}
+      {A*STAR — National Metrology Centre}{Singapore}
+      \resumeItemListStart
+          \resumeItem{Developed autonomous data-measurement web server using Python (PyVISA, Pandas, Dash) with data analysis and visualization for lab instrument data}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {SWE Intern}{Apr 2023 -- Jun 2023}
+      {HolyWally}{Singapore}
+      \resumeItemListStart
+        \resumeItem{Built full-stack dashboard using Python, SQL, and Superblocks with PostgreSQL, integrating REST APIs and third-party services for \textasciitilde100 users}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\href{https://github.com/ryryry-3302/flare.ai}{\underline{\textbf{Flair AI}}} $|$ \emph{AI writing assistant; React, Tiptap, Twilio, Brainbase, Gemini, Tailwind}}{2025}
+    \resumeItemListStart
+      \resumeItem{\textbf{Winner (1st place, \$1{,}500)} — AI for Good Hackathon. Built end-to-end app with \textbf{automated essay grading} using NLP, live writing \textbf{metrics}, and grammar checks for \textasciitilde400 students}
+      \resumeItem{Integrated \textbf{Brainbase}, \textbf{Twilio}, and \textbf{Gemini} to deliver real-time \textbf{AI voice agent} with NLP, providing feedback in \textbf{English and Spanish}}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\href{https://devpost.com/software/watchdocks}{\underline{\textbf{WatchDocks}}} $|$ \emph{Smart Surveillance; YOLOv8, Gemini API, Python, Flask}}{2025}
+    \resumeItemListStart
+      \resumeItem{Developed a real-time theft detection system using \textbf{YOLOv8}, fine-tuning the model to distinguish between normal usage and suspicious tampering}
+      \resumeItem{Integrated \textbf{Gemini API} for context-aware analysis, reducing false positives by analyzing temporal patterns in video feeds}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\href{https://devpost.com/software/medbox-ai}{\underline{\textbf{MedBox AI}}} $|$ \emph{Medical Procedure Analysis; OpenCV, Chroma, Python}}{2025}
+    \resumeItemListStart
+      \resumeItem{Engineered a computer vision pipeline using \textbf{OpenCV} to automatically segment surgical procedures and detect medical tools in real-time}
+      \resumeItem{Implemented a RAG system with \textbf{Chroma} vector database to retrieve relevant medical protocols and flag procedural deviations}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small\item{
+      \textbf{ML/AI \& Computer Vision}{: Python, PyTorch, TensorFlow, OpenCV, SLAM, Sensor Fusion, NLP, Deep Learning} \\
+      \textbf{Data Science}{: Pandas, NumPy, Scikit-learn, Data Analysis, Feature Engineering} \\
+      \textbf{Systems \& Cloud}{: C/C++, ROS 2, GCP (GKE, Cloud Run, Pub/Sub, Artifact Registry, IAM), Kubernetes, Terraform, Docker, MLOps, DepthAI}
+    }
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}
