@@ -20,71 +20,134 @@ The system uses electromagnetic field sensing with 3D coil antennas and receiver
 
 ### System Architecture
 
-<div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
-  <img src="/emf/helmholtz-cad.png" alt="Helmholtz cage CAD design." className="w-full rounded-lg border-2 border-[#333]" />
-  <img src="/emf/helmholtz-final-real-photo.jpg" alt="Completed Helmholtz cage build." className="w-full rounded-lg border-2 border-[#333]" />
-</div>
-
 The full system combined a Helmholtz cage for controlled field generation, transmitter and receiver electronics, field-measurement tooling, and an end-to-end calibration and model-training pipeline for pose estimation.
 
 ### Helmholtz Cage Design & Build
 
-<div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
-  <img src="/emf/helmholtz-cad.png" alt="CAD view of the Helmholtz cage." className="w-full rounded-lg border-2 border-[#333]" />
-  <img src="/emf/gimbal-for-helmholtz.png" alt="Gimbal design used within the Helmholtz setup." className="w-full rounded-lg border-2 border-[#333]" />
-  <img src="/emf/helmholtz-controller-circuit-real.jpg" alt="Controller circuit used with the Helmholtz cage." className="w-full rounded-lg border-2 border-[#333]" />
-  <img src="/emf/helmholtz-final-real-photo.jpg" alt="Final Helmholtz cage assembly." className="w-full rounded-lg border-2 border-[#333]" />
-</div>
+<MediaCarousel
+  title="Helmholtz Field Generator"
+  items={[
+    {
+      type: "image",
+      src: "/emf/helmholtz-cad.png",
+      alt: "CAD view of the Helmholtz cage.",
+      caption: "CAD model of the Helmholtz cage used to plan the coil geometry and mechanical structure."
+    },
+    {
+      type: "image",
+      src: "/emf/gimbal-for-helmholtz.png",
+      alt: "Gimbal design used within the Helmholtz setup.",
+      caption: "Gimbal concept for rotating the tracked object during controlled data collection."
+    },
+    {
+      type: "image",
+      src: "/emf/helmholtz-controller-circuit-real.jpg",
+      alt: "Controller circuit used with the Helmholtz cage.",
+      caption: "Controller circuit used to drive and validate the field-generation setup."
+    },
+    {
+      type: "image",
+      src: "/emf/helmholtz-final-real-photo.jpg",
+      alt: "Final Helmholtz cage assembly.",
+      caption: "Final physical Helmholtz cage assembly used for calibration and tracking experiments."
+    }
+  ]}
+/>
 
 I designed the Helmholtz cage in OnShape, built the physical structure, and used it as the central field-generation environment for calibration, experimentation, and data collection.
 
 ### Transmitter Electronics
 
-<div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
-  <img src="/emf/emf-transmitter-schematic.png" alt="EMF transmitter schematic." className="w-full rounded-lg border-2 border-[#333]" />
-  <img src="/emf/emf-transmitter-pcb.png" alt="EMF transmitter PCB layout." className="w-full rounded-lg border-2 border-[#333]" />
-  <img src="/emf/emf-transmitter-real-photo.jpg" alt="Real photo of the EMF transmitter board." className="w-full rounded-lg border-2 border-[#333]" />
-  <img src="/emf/emf-transmitter-oscillioscope-debugging.jpg" alt="Oscilloscope debugging of the transmitter electronics." className="w-full rounded-lg border-2 border-[#333]" />
-</div>
+<MediaCarousel
+  title="Transmitter Bring-up"
+  items={[
+    {
+      type: "image",
+      src: "/emf/emf-transmitter-schematic.png",
+      alt: "EMF transmitter schematic.",
+      caption: "Transmitter schematic after adapting the circuit requirements for this tracking setup."
+    },
+    {
+      type: "image",
+      src: "/emf/emf-transmitter-pcb.png",
+      alt: "EMF transmitter PCB layout.",
+      caption: "PCB layout for the transmitter board after board-level iteration."
+    },
+    {
+      type: "image",
+      src: "/emf/emf-transmitter-real-photo.jpg",
+      alt: "Real photo of the EMF transmitter board.",
+      caption: "Assembled transmitter hardware during bring-up."
+    },
+    {
+      type: "image",
+      src: "/emf/emf-transmitter-oscillioscope-debugging.jpg",
+      alt: "Oscilloscope debugging of the transmitter electronics.",
+      caption: "Oscilloscope debugging while validating transmitter output and signal behavior."
+    }
+  ]}
+/>
 
 For the transmitter, I built upon electrical engineering work by **William Zhang**, editing and extending his original circuit design to suit the requirements of this project. That included circuit changes, board-level iteration, and bring-up/debugging work during validation.
 
 ### Receiver Electronics
 
-<div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
-  <img src="/emf/emf-receiver-schematic.png" alt="EMF receiver schematic." className="w-full rounded-lg border-2 border-[#333]" />
-  <img src="/emf/emf-receiver-pcb.png" alt="EMF receiver PCB layout." className="w-full rounded-lg border-2 border-[#333]" />
-  <img src="/emf/emf-receiver-real-photo.jpg" alt="Real photo of the EMF receiver board." className="w-full rounded-lg border-2 border-[#333]" />
-  <img src="/emf/fluxgate-magnometer-reader.jpg" alt="Fluxgate magnetometer reader used for measurement and validation." className="w-full rounded-lg border-2 border-[#333]" />
-</div>
+<MediaCarousel
+  title="Receiver And Measurement Hardware"
+  items={[
+    {
+      type: "image",
+      src: "/emf/emf-receiver-schematic.png",
+      alt: "EMF receiver schematic.",
+      caption: "Receiver schematic from the existing EE design that I integrated into the larger tracking system."
+    },
+    {
+      type: "image",
+      src: "/emf/emf-receiver-pcb.png",
+      alt: "EMF receiver PCB layout.",
+      caption: "Receiver PCB layout used as part of the sensing pipeline."
+    },
+    {
+      type: "image",
+      src: "/emf/emf-receiver-real-photo.jpg",
+      alt: "Real photo of the EMF receiver board.",
+      caption: "Real receiver board used during system integration and validation."
+    },
+    {
+      type: "image",
+      src: "/emf/fluxgate-magnometer-reader.jpg",
+      alt: "Fluxgate magnetometer reader used for measurement and validation.",
+      caption: "Fluxgate magnetometer reader used to validate field behavior and support calibration."
+    }
+  ]}
+/>
 
 I did **not** design the receiver from scratch. That part of the system was based on earlier EE work, and my contribution was to build on top of it through system integration, testing in the Helmholtz setup, and using it in the end-to-end calibration and tracking pipeline.
 
 ### Demo Videos
 
-<div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
-  <div className="space-y-2">
-    <p className="text-sm text-zinc-400 text-center">Tracking Demo V1</p>
-    <video controls className="w-full rounded-lg border-2 border-[#333]">
-      <source src="/emf_tracking_v1.mov" type="video/mp4" />
-      <source src="/emf_tracking_v1.mov" type="video/quicktime" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-  <div className="space-y-2">
-    <p className="text-sm text-zinc-400 text-center">Tracking Demo V2</p>
-    <video controls className="w-full rounded-lg border-2 border-[#333]">
-      <source src="/emf_tracking_v2.mov" type="video/mp4" />
-      <source src="/emf_tracking_v2.mov" type="video/quicktime" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</div>
+<MediaCarousel
+  title="Tracking Demos"
+  items={[
+    {
+      type: "video",
+      src: "/emf_tracking_v1.mov",
+      alt: "First EMF tracking demo.",
+      caption: "Early tracking demo from the first working version of the EMF pose-estimation pipeline."
+    },
+    {
+      type: "video",
+      src: "/emf_tracking_v2.mov",
+      alt: "Second EMF tracking demo.",
+      caption: "Later tracking demo after additional calibration, hardware iteration, and pipeline tuning."
+    }
+  ]}
+/>
 
 ### Key Contributions
 
 - **Hardware Design & Assembly:** Designed the Helmholtz cage in OnShape and built the physical structure for generating controlled electromagnetic fields
-- **Circuit Design & Soldering:** Designed and assembled the 3D coil antenna arrays and receiver circuits, including all PCB work and component soldering
+- **Circuit Iteration & Soldering:** Built on William Zhang's transmitter circuit work, edited the transmitter design for this project, and assembled/debugged the hardware during bring-up
 - **Data Collection:** Collected comprehensive training datasets by systematically varying positions and orientations within the calibrated field
 - **Machine Learning Model:** Trained models to predict 6-DOF poses from EMF sensor readings
 - **System Calibration:** Developed and performed calibration procedures to ensure accurate field generation and sensor readings
@@ -97,7 +160,7 @@ The system operates by generating controlled electromagnetic fields using a Helm
 Key technical components included:
 - Helmholtz cage design for uniform field generation
 - 3D coil antenna arrays for multi-axis field sensing
-- Custom receiver circuits for signal processing
+- Receiver electronics for signal processing and field measurement
 - Data collection protocols for training dataset generation
 - Machine learning pipeline for pose prediction
 
@@ -110,13 +173,41 @@ The system achieved high-precision tracking with:
 - **Angular Accuracy:** 5-degree precision
 - **6-DOF Tracking:** Full position and orientation estimation
 
-<div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
-  <img src="/emfgraph1.png" alt="EMF Signal Analysis 1" className="rounded-lg border-2 border-[#333]" />
-  <img src="/emfgraph2.png" alt="EMF Signal Analysis 2" className="rounded-lg border-2 border-[#333]" />
-  <img src="/emfgraph3.png" alt="EMF Signal Analysis 3" className="rounded-lg border-2 border-[#333]" />
-  <img src="/emfgraph4.png" alt="EMF Signal Analysis 4" className="rounded-lg border-2 border-[#333]" />
-  <img src="/emfgraph5.png" alt="EMF Signal Analysis 5" className="rounded-lg border-2 border-[#333]" />
-</div>
+<MediaCarousel
+  title="Signal Analysis"
+  items={[
+    {
+      type: "image",
+      src: "/emfgraph1.png",
+      alt: "EMF signal analysis graph 1.",
+      caption: "Signal analysis output used while validating the learned pose-estimation pipeline."
+    },
+    {
+      type: "image",
+      src: "/emfgraph2.png",
+      alt: "EMF signal analysis graph 2.",
+      caption: "Additional signal analysis from calibration and model-evaluation work."
+    },
+    {
+      type: "image",
+      src: "/emfgraph3.png",
+      alt: "EMF signal analysis graph 3.",
+      caption: "Field and sensor-response analysis used to debug system behavior."
+    },
+    {
+      type: "image",
+      src: "/emfgraph4.png",
+      alt: "EMF signal analysis graph 4.",
+      caption: "Model and sensor analysis from later iterations of the tracking pipeline."
+    },
+    {
+      type: "image",
+      src: "/emfgraph5.png",
+      alt: "EMF signal analysis graph 5.",
+      caption: "Final supporting analysis used to characterize system performance."
+    }
+  ]}
+/>
 
 ### Impact
 

@@ -4,7 +4,7 @@ description: Developed a custom implementation of ORB SLAM3 optimized for a ster
 category: Robotics
 date: "2025-05-30"
 previewType: video
-previewSrc: /ORBSLAM3.mp4
+previewSrc: /orb_slam_demo_video_pretty.mp4
 previewAlt: ORB SLAM3 stereo camera demo with live visual-inertial tracking.
 published: true
 ---
@@ -17,75 +17,52 @@ As part of my internship at ZeroshotData, I developed a custom implementation of
 
 This project focused on implementing and optimizing visual-inertial SLAM (Simultaneous Localization and Mapping) for robotics applications. The system processes stereo camera feeds and IMU data to provide real-time 6-DOF pose estimation, enabling robots to understand their position and orientation in 3D space while mapping their environment.
 
-<div className="space-y-6 my-8">
-  <img
-    src="/zeroshot-gripper-real.jpg"
-    alt="Real gripper setup used for demonstration capture and SLAM development."
-    className="w-full rounded-lg border-2 border-[#333]"
-  />
+<ResourceLinks
+  links={[
+    {
+      label: "View SF Fold Dataset",
+      href: "https://huggingface.co/datasets/zeroshotdata/sf_fold",
+      description: "Robot-folding demonstrations built by ZeroshotData, including my contributions to the surrounding processing and SLAM pipeline."
+    },
+    {
+      label: "Read the CTO Write-up",
+      href: "https://julienrineau.com/posts/sf-fold-dataset/",
+      description: "Julien Rineau's write-up on the dataset, collection setup, and motivation behind the work."
+    }
+  ]}
+/>
 
-  <div className="flex flex-wrap gap-4">
-    <a
-      href="https://huggingface.co/datasets/zeroshotdata/sf_fold"
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: '0.6rem',
-        padding: '0.9rem 1.1rem',
-        borderRadius: '999px',
-        border: '1px solid rgba(255, 222, 0, 0.28)',
-        background: 'linear-gradient(135deg, rgba(255, 222, 0, 0.12), rgba(77, 112, 224, 0.12))',
-        color: '#f8e7bf',
-        textDecoration: 'none',
-        fontWeight: 600,
-        letterSpacing: '0.04em'
-      }}
-    >
-      <span>View SF Fold Dataset</span>
-      <span aria-hidden="true">↗</span>
-    </a>
+<MediaCarousel
+  title="Capture Hardware"
+  items={[
+    {
+      type: "image",
+      src: "/zeroshot-gripper-real.jpg",
+      alt: "Real gripper setup used for demonstration capture and SLAM development.",
+      caption: "The real gripper setup used for demonstration capture, calibration work, and SLAM development around the SF Fold pipeline."
+    }
+  ]}
+/>
 
-    <a
-      href="https://julienrineau.com/posts/sf-fold-dataset/"
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: '0.6rem',
-        padding: '0.9rem 1.1rem',
-        borderRadius: '999px',
-        border: '1px solid rgba(255, 222, 0, 0.2)',
-        background: 'linear-gradient(135deg, rgba(106, 90, 205, 0.14), rgba(77, 173, 91, 0.12))',
-        color: '#f8e7bf',
-        textDecoration: 'none',
-        fontWeight: 600,
-        letterSpacing: '0.04em'
-      }}
-    >
-      <span>CTO Write-up</span>
-      <span aria-hidden="true">↗</span>
-    </a>
-  </div>
-</div>
+### SLAM Output
 
-### Demo Video
-
-<video controls width="100%" style={{ borderRadius: '8px', marginTop: '2rem', marginBottom: '2rem', border: '2px solid #333' }}>
-  <source src="/orb_slam_demo_video_pretty.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-
-### Logged Rerun Capture
-
-The original logging view below shows the rawer Rerun-based visualization I used while validating trajectories, timing, and signal quality during development.
-
-<video controls width="100%" style={{ borderRadius: '8px', marginTop: '2rem', marginBottom: '2rem', border: '2px solid #333' }}>
-  <source src="/ORBSLAM3.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
+<MediaCarousel
+  title="ORB SLAM3 Demo"
+  items={[
+    {
+      type: "video",
+      src: "/orb_slam_demo_video_pretty.mp4",
+      alt: "Clean ORB SLAM3 demo video.",
+      caption: "A cleaner presentation render of the ORB SLAM3 output from the stereo camera setup."
+    },
+    {
+      type: "video",
+      src: "/ORBSLAM3.mp4",
+      alt: "Rerun logging view of ORB SLAM3 trajectories and graph signals.",
+      caption: "The original logged Rerun view used while validating trajectories, timing, and graph signals during development."
+    }
+  ]}
+/>
 
 ### Key Contributions
 

@@ -3,6 +3,7 @@ import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useMDXComponent } from "next-contentlayer/hooks";
+import { MediaCarousel, ResourceLinks } from "./project-media";
 
 function clsx(...args: any) {
 	return args.filter(Boolean).join(" ");
@@ -11,7 +12,7 @@ const components = {
 	h1: ({ className, ...props }) => (
 		<h1
 			className={clsx(
-				"mt-2 scroll-m-20 text-xl md:text-2xl font-pixel text-pokemon-yellow pokemon-glow uppercase tracking-tighter",
+				"mt-2 scroll-m-20 font-display text-3xl text-[#fff2bf] md:text-4xl",
 				className,
 			)}
 			{...props}
@@ -20,7 +21,7 @@ const components = {
 	h2: ({ className, ...props }) => (
 		<h2
 			className={clsx(
-				"mt-10 scroll-m-20 border-b-2 border-pokemon-yellow pb-2 text-lg md:text-xl font-pixel text-pokemon-yellow uppercase tracking-tighter first:mt-0",
+				"mt-14 scroll-m-20 border-b border-[#ffde00]/25 pb-3 font-display text-2xl text-[#fff2bf] first:mt-0 md:text-3xl",
 				className,
 			)}
 			{...props}
@@ -29,7 +30,7 @@ const components = {
 	h3: ({ className, ...props }) => (
 		<h3
 			className={clsx(
-				"mt-8 scroll-m-20 text-base md:text-lg font-pixel text-pokemon-yellow uppercase tracking-tighter",
+				"mt-12 scroll-m-20 font-display text-xl text-[#ffde00] md:text-2xl",
 				className,
 			)}
 			{...props}
@@ -65,7 +66,7 @@ const components = {
 	a: ({ className, ...props }) => (
 		<Link
 			className={clsx(
-				"font-pixel text-xs text-pokemon-blue hover:text-pokemon-yellow underline underline-offset-4 transition-colors",
+				"font-medium text-[#ffde00] underline decoration-[#ffde00]/35 underline-offset-4 transition-colors hover:text-[#fff2bf]",
 				className,
 			)}
 			{...props}
@@ -73,26 +74,44 @@ const components = {
 	),
 	p: ({ className, ...props }) => (
 		<p
-			className={clsx("leading-relaxed font-pixel text-xs md:text-sm text-white/80 [&:not(:first-child)]:mt-6", className)}
+			className={clsx(
+				"max-w-3xl text-base leading-8 text-[#f5efe2]/80 [&:not(:first-child)]:mt-5",
+				className,
+			)}
 			{...props}
 		/>
 	),
 	ul: ({ className, ...props }) => (
-		<ul className={clsx("my-6 ml-6 list-none space-y-2", className)} {...props} />
+		<ul
+			className={clsx("my-6 ml-6 list-none space-y-3", className)}
+			{...props}
+		/>
 	),
 	ol: ({ className, ...props }) => (
-		<ol className={clsx("my-6 ml-6 list-decimal font-pixel text-[10px] md:text-xs text-white/80", className)} {...props} />
+		<ol
+			className={clsx(
+				"my-6 ml-6 list-decimal space-y-3 text-base text-[#f5efe2]/80",
+				className,
+			)}
+			{...props}
+		/>
 	),
 	li: ({ className, ...props }) => (
-		<li className={clsx("mt-2 font-pixel text-[10px] md:text-xs text-white/80 flex items-start gap-2", className)} {...props}>
-			<span className="text-pokemon-yellow">▶</span>
-			{props.children}
+		<li
+			className={clsx(
+				"mt-2 flex items-start gap-3 text-base leading-7 text-[#f5efe2]/80",
+				className,
+			)}
+			{...props}
+		>
+			<span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[#ffde00]" />
+			<div className="min-w-0 flex-1">{props.children}</div>
 		</li>
 	),
 	blockquote: ({ className, ...props }) => (
 		<blockquote
 			className={clsx(
-				"mt-6 border-l-4 border-pokemon-blue pl-6 italic text-white/60 bg-pokemon-blue/10 py-4",
+				"mt-8 rounded-lg border border-[#ffde00]/20 bg-[#ffde00]/10 px-5 py-4 italic text-[#f5efe2]/70",
 				className,
 			)}
 			{...props}
@@ -105,20 +124,35 @@ const components = {
 	}: React.ImgHTMLAttributes<HTMLImageElement>) => (
 		// eslint-disable-next-line @next/next/no-img-element
 		<img
-			className={clsx("rounded-md border border-zinc-200 relative z-[10000]", className)}
+			className={clsx(
+				"relative z-[1] my-8 rounded-lg border border-white/10 bg-[#0b0714]",
+				className,
+			)}
 			alt={alt}
 			{...props}
 		/>
 	),
-	video: ({ className, ...props }: React.VideoHTMLAttributes<HTMLVideoElement>) => (
+	video: ({
+		className,
+		...props
+	}: React.VideoHTMLAttributes<HTMLVideoElement>) => (
 		<video
-			className={clsx("relative z-[10000]", className)}
+			className={clsx(
+				"relative z-[1] my-8 rounded-lg border border-white/10 bg-[#0b0714]",
+				className,
+			)}
 			{...props}
 		/>
 	),
-	iframe: ({ className, ...props }: React.IframeHTMLAttributes<HTMLIFrameElement>) => (
+	iframe: ({
+		className,
+		...props
+	}: React.IframeHTMLAttributes<HTMLIFrameElement>) => (
 		<iframe
-			className={clsx("relative z-[10000]", className)}
+			className={clsx(
+				"relative z-[1] my-8 rounded-lg border border-white/10 bg-[#0b0714]",
+				className,
+			)}
 			{...props}
 		/>
 	),
@@ -178,6 +212,8 @@ const components = {
 	Image: ({ className, ...props }: any) => (
 		<Image className={clsx("relative z-[10000]", className)} {...props} />
 	),
+	MediaCarousel,
+	ResourceLinks,
 };
 
 interface MdxProps {
@@ -188,7 +224,7 @@ export function Mdx({ code }: MdxProps) {
 	const Component = useMDXComponent(code);
 
 	return (
-		<div className="mdx">
+		<div className="mdx project-writeup">
 			<Component components={components} />
 		</div>
 	);

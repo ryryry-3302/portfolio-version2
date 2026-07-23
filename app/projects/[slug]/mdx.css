@@ -30,3 +30,20 @@
   [data-rehype-pretty-code-title] + pre {
     @apply mt-0;
   }
+
+.project-writeup {
+  color: rgba(245, 239, 226, 0.82);
+}
+
+.project-writeup > * + * {
+  margin-top: 1.25rem;
+}
+
+.project-writeup strong {
+  color: #fff2bf;
+  font-weight: 650;
+}
+
+.project-writeup .project-media + h3 {
+  margin-top: 3rem;
+}

@@ -40,7 +40,7 @@ const projects: Project[] = [
 			"Visual-inertial SLAM pipeline tuned for a stereo robotics camera stack with real-time 6-DOF tracking.",
 		tags: ["C++", "OpenCV", "VIO"],
 		previewType: "video",
-		previewSrc: "/ORBSLAM3.mp4",
+		previewSrc: "/orb_slam_demo_video_pretty.mp4",
 		previewAlt: "ORB SLAM3 stereo camera demo.",
 	},
 	{
