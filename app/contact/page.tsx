@@ -26,7 +26,7 @@ const socials = [
 	},
 	{
 		icon: <FileText size={24} />,
-		href: "/ryan_leong_embedded_swe_resume.pdf",
+		href: "/ryan_leong_robotics_resume_us.pdf",
 		label: "Resume",
 		handle: "Download Resume",
 	},

@@ -33,8 +33,31 @@ export const Project = defineDocumentType(() => ({
 			type: "string",
 			required: true,
 		},
+		category: {
+			type: "string",
+			required: true,
+		},
 		date: {
 			type: "date",
+		},
+		previewType: {
+			type: "string",
+			required: true,
+		},
+		previewSrc: {
+			type: "string",
+			required: true,
+		},
+		previewPoster: {
+			type: "string",
+		},
+		previewAlt: {
+			type: "string",
+			required: true,
+		},
+		featured: {
+			type: "boolean",
+			default: false,
 		},
 		url: {
 			type: "string",

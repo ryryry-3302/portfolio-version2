@@ -13,42 +13,49 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
 	{
-		title: "Embedded / SWE",
-		company: "ZeroshotData",
-		companyUrl: "https://zeroshotdata.com/",
-		location: "San Francisco, CA",
-		period: "Jan 2025 — Present",
+		title: "Robotics Software Engineer Intern",
+		company: "DSO National Laboratories",
+		companyUrl: "https://www.dso.org.sg/",
+		location: "Singapore",
+		period: "May 2026 — Present",
 		points: [
-			"Built scalable video processing applications using Python, FFmpeg, and OpenCV for multi-camera robotics datasets, reducing pipeline costs by 50%",
-			"Developed ORB SLAM3 application for visual-inertial SLAM, integrating sensor fusion and real-time pose estimation for robotics navigation",
-			"Created 3D trajectory visualizer using Rerun with URDF models, enabling interactive visualization of robotic motion and sensor data",
-			"Built API servers using Flask with Swagger documentation and PostREST, providing RESTful interfaces for robotics data management and processing",
-			"Deployed dockerized containers communicating over Pub/Sub for scheduled, parallelizable job processing, optimizing resource utilization and throughput",
-			"Implemented data sharding and synthetic data generation using Mosaic, enabling scalable dataset augmentation for machine learning training",
+			"Built an agentic robot task-planning harness inspired by SayPlan and LookPlanGraph, integrating local LLM tool use, DDS middleware, and hierarchical 3D scene graphs for spatial reasoning and closed-loop replanning",
+			"Developed low-fidelity robot embodiment simulators and DDS adapters for external simulators, enabling hardware-independent testing, scenario replay, telemetry, and end-to-end autonomy validation",
+			"Benchmarked 40+ compact language models for task success, tool-use reliability, inference latency, and resource usage, producing a reproducible evaluation pipeline for local and edge deployment",
 		],
 	},
 	{
-		title: "SWE / FPGA Intern",
+		title: "Robotics Software Engineer",
+		company: "ZeroshotData — Early-Stage Robotics Startup",
+		companyUrl: "https://www.linkedin.com/company/zeroshotdata/",
+		location: "San Francisco, CA",
+		period: "Jan 2025 — Dec 2025",
+		points: [
+			"Built robotics infrastructure on GCP using Terraform and Kubernetes, deploying 20+ containerized services with CI/CD and FastAPI-based device registration, telemetry, monitoring, and fleet operations",
+			"Integrated visual-inertial ORB-SLAM3 into a UMI gripper using OAK-D stereo cameras, Kalibr camera-IMU calibration, Allan variance analysis, and synchronized sensor acquisition",
+			"Built Python applications for the end-to-end processing pipeline behind the SF Fold dataset across 100+ hours of robot-folding demonstrations, including video preprocessing, automated data validation, ORB-SLAM3 execution, review-video generation, Rerun visualizations, and Mosaic-based dataset sharding",
+			"Automated robot and sensor calibration using a Piper 6-DoF arm and prototyped infrared tracking with Arducam cameras, hardware frame synchronization, and Orange Pi compute",
+			"Engineered an electromagnetic full-body tracking system with a 1.5 m range, centimetre-level positional accuracy, and 5° rotational accuracy using custom PCBs, STM32 firmware, Helmholtz coils, and Onshape CAD",
+		],
+	},
+	{
+		title: "Research Engineering Intern",
 		company: "A*STAR — National Metrology Centre",
-		companyUrl: "https://www.a-star.edu.sg/nmc",
+		companyUrl: "https://asef.a-star.edu.sg/institutes/nmc",
 		location: "Singapore",
 		period: "May 2024 — Aug 2024",
 		points: [
-			"Engineered frequency synthesizer using Verilog and GOWIN IP cores on Tang Nano 20K, achieving 6.5–9.0 ns precision for 1PPS synchronization",
-			"Developed autonomous data-measurement web server using Python (PyVISA, Pandas, Dash) on OrangePi 3B+ to collect, analyze, and visualize lab instrument data",
-			"Resolved Linux kernel driver compatibility issues for NI-USB-HS GPIB interface on OrangePi architecture, enabling robust instrument control",
+			"Built a Python measurement platform using PyVISA, Pandas, and Dash on an Orange Pi, and designed a Verilog FPGA frequency synthesizer achieving 6.5-9.0 ns timing precision",
 		],
 	},
 	{
-		title: "SWE Intern",
-		company: "HolyWally",
-		companyUrl: "https://www.holywally.com/",
+		title: "Software Engineering Intern",
+		company: "HolyWally — Fintech Startup",
+		companyUrl: "https://www.holywally.com/insta-wally",
 		location: "Singapore",
 		period: "Apr 2023 — Jun 2023",
 		points: [
-			"Spearheaded internal tools using Python, SQL, and Superblocks with PostgreSQL, the HolyWally backend, and third-party APIs, consolidating data access for ~100 users in a single dashboard",
-			"Led QA, designing Postman calls to interface with third-party APIs (episode6) and collaborating with backend engineers to resolve UAT bugs",
-			"Built full-stack dashboard integrating REST APIs, SQL queries, and frontend components to streamline internal workflows",
+			"Built Python and SQL tools backed by PostgreSQL for an operational dashboard used by approximately 100 employees",
 		],
 	},
 ];
@@ -113,4 +120,3 @@ export function ExperienceTimeline() {
 		</div>
 	);
 }
-

@@ -95,7 +95,7 @@ export function Hero() {
 						<div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
 					</Link>
 					<Link
-						href="/ryan_leong_embedded_swe_resume.pdf"
+						href="/ryan_leong_robotics_resume_us.pdf"
 						target="_blank"
 						rel="noopener noreferrer"
 						download
@@ -128,4 +128,3 @@ export function Hero() {
 		</section>
 	);
 }
-

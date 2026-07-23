@@ -1,124 +1,91 @@
-import Link from "next/link";
-import React from "react";
 import { allProjects } from "contentlayer/generated";
 import { Navigation } from "../components/nav";
-import { Card } from "../components/card";
-import { Article } from "./article";
+import { ProjectTimeline } from "./project-timeline";
 
 export const revalidate = 60;
+
 export default async function ProjectsPage() {
+	const selectedSlug = "orb-slam3-stereo";
+	const featuredOrder = [
+		"emf-full-body-tracking",
+		"flair-ai",
+		"leasy",
+		"rnz",
+		"medbox-ai",
+		"watchdocks",
+	];
 
-  const featured = allProjects.find((project) => project.slug === "flair-ai")!;
-  const top2 = allProjects.find((project) => project.slug === "orb-slam3-stereo")!;
-  const top3 = allProjects.find((project) => project.slug === "emf-full-body-tracking")!;
-  const sorted = allProjects
-    .filter((p) => p.published)
-    .filter(
-      (project) =>
-        project.slug !== featured.slug &&
-        project.slug !== top2.slug &&
-        project.slug !== top3.slug &&
-        project.slug !== "rnz",
-    )
-    .sort(
-      (a, b) =>
-        new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
-        new Date(a.date ?? Number.POSITIVE_INFINITY).getTime(),
-    );
+	const published = allProjects
+		.filter((project) => project.published)
+		.sort(
+			(a, b) =>
+				new Date(b.date ?? Number.NEGATIVE_INFINITY).getTime() -
+				new Date(a.date ?? Number.NEGATIVE_INFINITY).getTime(),
+		);
 
-  const rnz = allProjects.find((project) => project.slug === "rnz");
-  if (rnz) sorted.push(rnz);
+	const selectedProject = published.find(
+		(project) => project.slug === selectedSlug,
+	);
+	const featuredProjects = featuredOrder
+		.map((slug) => published.find((project) => project.slug === slug))
+		.filter((project): project is typeof published[number] => Boolean(project));
+	const excludedSlugs = new Set([
+		selectedSlug,
+		...featuredProjects.map((project) => project.slug),
+	]);
+	const remainingProjects = published.filter(
+		(project) => !excludedSlugs.has(project.slug),
+	);
 
-  return (
-    <div className="relative pb-16 min-h-screen">
-      <Navigation />
-      <div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
-        <div className="max-w-2xl mx-auto lg:mx-0">
-          <h2 className="text-2xl md:text-4xl font-pixel text-pokemon-yellow pokemon-glow uppercase tracking-tighter">
-            Projects
-          </h2>
-          <p className="mt-4 text-white/60 font-pixel text-xs">
-            Some of the projects are from work and some are on my own time.
-          </p>
-        </div>
-        <div className="w-full h-1 bg-pokemon-yellow pixel-border" />
+	return (
+		<div
+			data-projects-editorial="true"
+			className="relative min-h-screen overflow-hidden bg-[#1a0d2e] text-[#f5efe2] font-sans"
+		>
+			<div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,222,0,0.12),transparent_26%),radial-gradient(circle_at_18%_20%,rgba(106,90,205,0.18),transparent_32%),radial-gradient(circle_at_82%_14%,rgba(59,76,202,0.16),transparent_28%),linear-gradient(180deg,#24153f_0%,#1a0d2e_42%,#130a22_100%)]" />
+			<div className="absolute inset-0 opacity-[0.1] [background-image:linear-gradient(to_right,rgba(255,255,255,0.32)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.32)_1px,transparent_1px)] [background-size:72px_72px]" />
+			<div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-[#ffde00]/10 via-[#6a5acd]/8 to-transparent blur-3xl" />
 
-        <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
-          <Card>
-            <Link href={`/projects/${featured.slug}`}>
-              <article className="relative w-full h-full p-4 md:p-8">
-                <div className="flex items-center justify-between gap-2">
-                  <div className="text-xs text-gray-300 font-pixel">
-                    {featured.date ? (
-                      <time dateTime={new Date(featured.date).toISOString()}>
-                        {Intl.DateTimeFormat(undefined, {
-                          dateStyle: "medium",
-                        }).format(new Date(featured.date))}
-                      </time>
-                    ) : (
-                      <span>SOON</span>
-                    )}
-                  </div>
-                </div>
+			<Navigation />
 
-                <h2
-                  id="featured-post"
-                  className="mt-4 text-lg md:text-2xl font-pixel text-pokemon-yellow pokemon-glow uppercase tracking-tighter"
-                >
-                  {featured.title}
-                </h2>
-                <p className="mt-4 leading-relaxed text-gray-200 font-pixel text-xs md:text-sm">
-                  {featured.description}
-                </p>
-                <div className="mt-8">
-                  <p className="text-pokemon-yellow font-pixel text-xs hover:text-white transition-colors">
-                    ▶ READ MORE
-                  </p>
-                </div>
-              </article>
-            </Link>
-          </Card>
+			<main className="relative z-10 mx-auto max-w-7xl px-6 pb-24 pt-24 md:px-8 md:pt-28 lg:px-12 lg:pt-32">
+				<section className="mx-auto max-w-6xl">
+					<p className="text-[0.72rem] uppercase tracking-[0.4em] text-[#f1c27d]">
+						Selected work
+					</p>
 
-          <div className="flex flex-col w-full gap-8 mx-auto border-t border-gray-900/10 lg:mx-0 lg:border-t-0 ">
-            {[top2, top3].map((project) => (
-              <Card key={project.slug}>
-                <Article project={project} />
-              </Card>
-            ))}
-          </div>
-        </div>
-        <div className="hidden w-full h-px md:block bg-zinc-800" />
+					<div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-white/10 pt-5 text-[0.72rem] uppercase tracking-[0.32em] text-white/45">
+						<span>{published.length} published projects</span>
+						<span className="h-1 w-1 rounded-full bg-white/35" />
+						<span>Selected lead + featured sequence</span>
+						<span className="h-1 w-1 rounded-full bg-white/35" />
+						<span>Media-led overview</span>
+					</div>
+				</section>
 
-        <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
-          <div className="grid grid-cols-1 gap-4">
-            {sorted
-              .filter((_, i) => i % 3 === 0)
-              .map((project) => (
-                <Card key={project.slug}>
-                  <Article project={project} />
-                </Card>
-              ))}
-          </div>
-          <div className="grid grid-cols-1 gap-4">
-            {sorted
-              .filter((_, i) => i % 3 === 1)
-              .map((project) => (
-                <Card key={project.slug}>
-                  <Article project={project} />
-                </Card>
-              ))}
-          </div>
-          <div className="grid grid-cols-1 gap-4">
-            {sorted
-              .filter((_, i) => i % 3 === 2)
-              .map((project) => (
-                <Card key={project.slug}>
-                  <Article project={project} />
-                </Card>
-              ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+				<section className="mx-auto mt-10 max-w-6xl md:mt-12">
+					{selectedProject ? (
+						<div className="mb-12 md:mb-16">
+							<ProjectTimeline
+								featuredProjects={[selectedProject]}
+								projects={[]}
+								headlineClassName="font-display"
+								bodyClassName="font-sans"
+								showFeaturedLabel={false}
+							/>
+						</div>
+					) : null}
+
+					<ProjectTimeline
+						featuredProjects={featuredProjects}
+						projects={remainingProjects}
+						headlineClassName="font-display"
+						bodyClassName="font-sans"
+						featuredLabel="Featured work"
+						fullTimelineLabel="Full timeline"
+					/>
+				</section>
+			</main>
+		</div>
+	);
 }

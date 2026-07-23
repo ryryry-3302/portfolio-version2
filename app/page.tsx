@@ -43,13 +43,13 @@ export default function Home() {
 						<div className="p-8">
 							<h3 className="text-lg font-pixel text-pokemon-yellow mb-6 pokemon-glow uppercase">▶ Background</h3>
 							<p className="text-white/80 mb-4 leading-relaxed font-pixel text-xs md:text-sm">
-								I'm a Computer Engineering undergraduate at the National University of Singapore, 
-								currently working as an Embedded / SWE at ZeroshotData in San Francisco, where I build 
-								robotics software and embedded systems for autonomous navigation and data processing.
+								I'm a Computer Engineering undergraduate at the National University of Singapore,
+								currently working as a Robotics Software Engineer Intern at DSO National Laboratories,
+								where I build agentic robotics software, simulation tooling, and autonomy systems.
 							</p>
 							<p className="text-white/80 leading-relaxed font-pixel text-xs md:text-sm">
-								My expertise lies in robotics software development, including visual-inertial SLAM (ORB SLAM3), 
-								sensor fusion, embedded systems, and real-time pose estimation.
+								My expertise lies in robotics software development, including task planning,
+								visual-inertial SLAM, sensor fusion, embedded systems, and real-time pose estimation.
 							</p>
 						</div>
 					</Card>
@@ -69,15 +69,15 @@ export default function Home() {
 									<div className="flex flex-col md:flex-row md:items-start justify-between mb-2 gap-2">
 										<div>
 											<p className="font-pixel text-white text-xs md:text-sm">National University of Singapore</p>
-											<p className="text-white/60 text-xs mt-1 font-pixel">B.Eng (Honors), Computer Engineering</p>
+											<p className="text-white/60 text-xs mt-1 font-pixel">B.Eng (First Class Honours), Computer Engineering</p>
 										</div>
 										<span className="px-2 py-1 bg-pokemon-blue pixel-border text-xs text-white font-pixel whitespace-nowrap">
 											2023 — JUN 2026
 										</span>
 									</div>
 									<div className="mt-3 space-y-1">
-										<p className="text-xs text-pokemon-yellow font-pixel">GPA: 4.88/5.0</p>
-										<p className="text-xs text-white/60 font-pixel">Dean's List; Engineering Scholars Program</p>
+										<p className="text-xs text-pokemon-yellow font-pixel">GPA: 4.75/5.0</p>
+										<p className="text-xs text-white/60 font-pixel">Dean&apos;s List in all eligible semesters (2/2); Engineering Scholars Programme</p>
 									</div>
 								</div>
 								<div className="pt-4 border-t-2 border-white/10">
@@ -157,7 +157,7 @@ export default function Home() {
 								▶ CONTACT ME
 							</Link>
 							<Link
-								href="/ryan_leong_embedded_swe_resume.pdf"
+								href="/ryan_leong_robotics_resume_us.pdf"
 								target="_blank"
 								rel="noopener noreferrer"
 								download
