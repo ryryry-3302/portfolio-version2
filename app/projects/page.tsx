@@ -57,9 +57,9 @@ export default async function ProjectsPage() {
 					<div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-white/10 pt-5 text-[0.72rem] uppercase tracking-[0.32em] text-white/45">
 						<span>{published.length} published projects</span>
 						<span className="h-1 w-1 rounded-full bg-white/35" />
-						<span>Selected lead + featured sequence</span>
+						<span></span>
 						<span className="h-1 w-1 rounded-full bg-white/35" />
-						<span>Media-led overview</span>
+						<span></span>
 					</div>
 				</section>
 

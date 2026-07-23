@@ -18,6 +18,48 @@ As part of my internship, I developed a full-body tracking system using electrom
 
 The system uses electromagnetic field sensing with 3D coil antennas and receivers to track body position and orientation. I was responsible for the complete development cycle, from designing and building the hardware to collecting training data and developing machine learning models for pose prediction.
 
+### System Architecture
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+  <img src="/emf/helmholtz-cad.png" alt="Helmholtz cage CAD design." className="w-full rounded-lg border-2 border-[#333]" />
+  <img src="/emf/helmholtz-final-real-photo.jpg" alt="Completed Helmholtz cage build." className="w-full rounded-lg border-2 border-[#333]" />
+</div>
+
+The full system combined a Helmholtz cage for controlled field generation, transmitter and receiver electronics, field-measurement tooling, and an end-to-end calibration and model-training pipeline for pose estimation.
+
+### Helmholtz Cage Design & Build
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+  <img src="/emf/helmholtz-cad.png" alt="CAD view of the Helmholtz cage." className="w-full rounded-lg border-2 border-[#333]" />
+  <img src="/emf/gimbal-for-helmholtz.png" alt="Gimbal design used within the Helmholtz setup." className="w-full rounded-lg border-2 border-[#333]" />
+  <img src="/emf/helmholtz-controller-circuit-real.jpg" alt="Controller circuit used with the Helmholtz cage." className="w-full rounded-lg border-2 border-[#333]" />
+  <img src="/emf/helmholtz-final-real-photo.jpg" alt="Final Helmholtz cage assembly." className="w-full rounded-lg border-2 border-[#333]" />
+</div>
+
+I designed the Helmholtz cage in OnShape, built the physical structure, and used it as the central field-generation environment for calibration, experimentation, and data collection.
+
+### Transmitter Electronics
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+  <img src="/emf/emf-transmitter-schematic.png" alt="EMF transmitter schematic." className="w-full rounded-lg border-2 border-[#333]" />
+  <img src="/emf/emf-transmitter-pcb.png" alt="EMF transmitter PCB layout." className="w-full rounded-lg border-2 border-[#333]" />
+  <img src="/emf/emf-transmitter-real-photo.jpg" alt="Real photo of the EMF transmitter board." className="w-full rounded-lg border-2 border-[#333]" />
+  <img src="/emf/emf-transmitter-oscillioscope-debugging.jpg" alt="Oscilloscope debugging of the transmitter electronics." className="w-full rounded-lg border-2 border-[#333]" />
+</div>
+
+For the transmitter, I built upon electrical engineering work by **William Zhang**, editing and extending his original circuit design to suit the requirements of this project. That included circuit changes, board-level iteration, and bring-up/debugging work during validation.
+
+### Receiver Electronics
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+  <img src="/emf/emf-receiver-schematic.png" alt="EMF receiver schematic." className="w-full rounded-lg border-2 border-[#333]" />
+  <img src="/emf/emf-receiver-pcb.png" alt="EMF receiver PCB layout." className="w-full rounded-lg border-2 border-[#333]" />
+  <img src="/emf/emf-receiver-real-photo.jpg" alt="Real photo of the EMF receiver board." className="w-full rounded-lg border-2 border-[#333]" />
+  <img src="/emf/fluxgate-magnometer-reader.jpg" alt="Fluxgate magnetometer reader used for measurement and validation." className="w-full rounded-lg border-2 border-[#333]" />
+</div>
+
+I did **not** design the receiver from scratch. That part of the system was based on earlier EE work, and my contribution was to build on top of it through system integration, testing in the Helmholtz setup, and using it in the end-to-end calibration and tracking pipeline.
+
 ### Demo Videos
 
 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
@@ -59,6 +101,8 @@ Key technical components included:
 - Data collection protocols for training dataset generation
 - Machine learning pipeline for pose prediction
 
+In practice, the development cycle also involved PCB bring-up, oscilloscope-based debugging, field validation using the fluxgate reader, and repeated calibration runs to make the final demos stable and repeatable.
+
 ### Results
 
 The system achieved high-precision tracking with:
@@ -77,6 +121,14 @@ The system achieved high-precision tracking with:
 ### Impact
 
 This work contributed to advanced motion tracking capabilities, with applications in motion capture, virtual reality, and robotics. The end-to-end development process demonstrated skills in hardware design, embedded systems, data science, and machine learning.
+
+### Acknowledgements & References
+
+This project was partly an attempt to recreate and learn from [Aura: Inside-out Electromagnetic Controller Tracking](https://ubicomplab.cs.washington.edu/pdfs/aura.pdf), a 6-DoF electromagnetic tracking system by Eric Whitmire, Farshid Salemi Parizi, and Shwetak Patel.
+
+I also want to acknowledge and thank [Eric Whitmire](https://www.ericwhitmire.com/) for his help during development and for the original research that inspired this project direction.
+
+For the Helmholtz cage construction and design intuition, I also used [this Helmholtz coil reference](https://notblackmagic.com/bitsnpieces/helmholtz-coil/), which gives practical guidance on coil spacing, radius, and field estimation.
 
 ### Note
 
