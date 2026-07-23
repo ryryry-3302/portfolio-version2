@@ -30,8 +30,9 @@
 \addtolength{\oddsidemargin}{-0.6in}
 \addtolength{\evensidemargin}{-0.6in}
 \addtolength{\textwidth}{1.2in}
-\addtolength{\topmargin}{-0.72in}
-\addtolength{\textheight}{1.44in}
+\addtolength{\topmargin}{-0.8in}
+\addtolength{\textheight}{1.6in}
+\setlength{\footskip}{6pt}
 
 \urlstyle{same}
 \raggedbottom
@@ -52,8 +53,8 @@
 
 \titlespacing*{\section}
   {0pt}
-  {5pt}
-  {3pt}
+  {4.5pt}
+  {2pt}
 
 % Ensure generated PDF is machine-readable and ATS-parsable
 \pdfgentounicode=1
@@ -96,7 +97,7 @@
 }
 
 \newcommand{\resumeSkillRow}[2]{
-  \textbf{#1} & #2 \\[1.5pt]
+  \textbf{#1} & #2 \\[1.25pt]
 }
 
 \renewcommand\labelitemii{
@@ -107,8 +108,8 @@
   \begin{itemize}[
     leftmargin=0.15in,
     label={},
-    itemsep=3pt,
-    topsep=3pt,
+    itemsep=2.25pt,
+    topsep=2pt,
     parsep=0pt,
     partopsep=0pt
   ]
@@ -121,8 +122,8 @@
 \newcommand{\resumeItemListStart}{
   \begin{itemize}[
     leftmargin=0.25in,
-    itemsep=2.5pt,
-    topsep=3pt,
+    itemsep=1.75pt,
+    topsep=2.25pt,
     parsep=0pt,
     partopsep=0pt
   ]
@@ -141,7 +142,7 @@
 %----------HEADING----------
 \begin{center}
   {\LARGE\bfseries Leong Ko Ryan Jasper}
-  \\ \vspace{3pt}
+  \\ \vspace{2.5pt}
 
   \small
   \href{mailto:ryan.leong@u.nus.edu}{

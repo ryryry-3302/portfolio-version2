@@ -1,9 +1,11 @@
 %-------------------------
 % Resume in LaTeX - Robotics Software Engineer (US)
-%------------------------
+%-------------------------
 
 \documentclass[letterpaper,11pt]{article}
 
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
@@ -15,187 +17,377 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{microtype}
 \input{glyphtounicode}
 
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
+\fancyhf{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
+% Page geometry
 \addtolength{\oddsidemargin}{-0.6in}
 \addtolength{\evensidemargin}{-0.6in}
 \addtolength{\textwidth}{1.2in}
-\addtolength{\topmargin}{-0.7in}
-\addtolength{\textheight}{1.4in}
+\addtolength{\topmargin}{-0.8in}
+\addtolength{\textheight}{1.6in}
+\setlength{\footskip}{6pt}
 
 \urlstyle{same}
-
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
+\setlength{\parindent}{0pt}
 
-% Sections formatting
-\titleformat{\section}{
-  \vspace{-12pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+% Section formatting
+\titleformat{\section}
+  {\scshape\raggedright\large}
+  {}{0em}{}
+  [\color{black}\titlerule]
 
-% Ensure that generated PDF is machine readable/ATS parsable
+\titleformat{name=\section,numberless}
+  {\scshape\raggedright\large}
+  {}{0em}{}
+  [\color{black}\titlerule]
+
+\titlespacing*{\section}
+  {0pt}
+  {4.5pt}
+  {2pt}
+
+% Ensure generated PDF is machine-readable and ATS-parsable
 \pdfgentounicode=1
 
 %-------------------------
 % Custom commands
+
 \newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-4pt}}
-  }
+  \item\small{#1}
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+  \item
+  \begin{tabular*}{0.97\textwidth}[t]{
+    l@{\extracolsep{\fill}}r
+  }
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-3pt}
 }
 
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
+\newcommand{\resumeDoubleDegree}[6]{
+  \item
+  \begin{tabular*}{0.97\textwidth}[t]{
+    l@{\extracolsep{\fill}}r
+  }
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+    \textit{\small #5} & \textit{\small #6} \\
+  \end{tabular*}\vspace{-3pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+  \item
+  \begin{tabular*}{0.97\textwidth}{
+    l@{\extracolsep{\fill}}r
+  }
+    \small #1 & #2 \\
+  \end{tabular*}\vspace{-3pt}
 }
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\newcommand{\resumeSkillRow}[2]{
+  \textbf{#1} & #2 \\[1.25pt]
+}
 
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{
+  $\vcenter{\hbox{\tiny$\bullet$}}$
+}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}\n\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{
+  \begin{itemize}[
+    leftmargin=0.15in,
+    label={},
+    itemsep=2.25pt,
+    topsep=2pt,
+    parsep=0pt,
+    partopsep=0pt
+  ]
+}
+
+\newcommand{\resumeSubHeadingListEnd}{
+  \end{itemize}\vspace{-2pt}
+}
+
+\newcommand{\resumeItemListStart}{
+  \begin{itemize}[
+    leftmargin=0.25in,
+    itemsep=1.75pt,
+    topsep=2.25pt,
+    parsep=0pt,
+    partopsep=0pt
+  ]
+}
+
+\newcommand{\resumeItemListEnd}{
+  \end{itemize}\vspace{-2pt}
+}
 
 %-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Resume begins
+%-------------------------------------------
 
 \begin{document}
 
 %----------HEADING----------
 \begin{center}
-    \textbf{\Huge \scshape Leong Ko Ryan Jasper} \\ \vspace{2pt}
-    \small
-    \href{mailto:ryan.leong@u.nus.edu}{\underline{ryan.leong@u.nus.edu}} $|$ 
-    \href{https://www.linkedin.com/in/ryanjasperkoleong/}{\underline{linkedin.com/in/ryanjasperkoleong}} $|$
-    \href{https://github.com/ryryry-3302}{\underline{github.com/ryryry-3302}} $|$
-    \href{https://ryan-leong-portfolio.vercel.app/}{\underline{ryan-leong-portfolio.vercel.app}} \\ \vspace{2pt}
-    {\small \textit{Singapore Citizen — eligible for H-1B1 (US–Singapore FTA), a no-lottery work visa similar to TN}}
+  {\LARGE\bfseries Leong Ko Ryan Jasper}
+  \\ \vspace{2.5pt}
+
+  \small
+  \href{mailto:ryan.leong@u.nus.edu}{
+    \underline{ryan.leong@u.nus.edu}
+  }
+  $|$
+  \href{https://www.linkedin.com/in/ryanjasperkoleong/}{
+    \underline{LinkedIn}
+  }
+  $|$
+  \href{https://github.com/ryryry-3302}{
+    \underline{GitHub}
+  }
+  $|$
+  \href{https://ryan-leong-portfolio.vercel.app/}{
+    \underline{Portfolio}
+  }
+  $|$
+  \textit{Singapore Citizen --- eligible for H-1B1 (US--Singapore FTA)}
 \end{center}
+
 
 %-----------EDUCATION-----------
 \section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {National University of Singapore}{Aug 2023 -- Aug 2026}
-      {Bachelor of Engineering (Honors), Major in Computer Engineering}{Singapore}
-        \resumeItemListStart
-            \resumeItem{GPA: 4.88/5.0 $|$ Dean's List; Enrolled under the Engineering Scholars Program}
-        \resumeItemListEnd
-    \resumeSubheading
-      {Stanford University}{Apr 2025 -- Jun 2025}
-      {Visiting Student, Spring Quarter (Exchange)}{Stanford, CA}
-  \resumeSubHeadingListEnd
+
+\resumeSubHeadingListStart
+
+  \resumeDoubleDegree
+    {National University of Singapore}
+    {Singapore}
+    {Master of Science in Computer Engineering,
+    Specialisation in Machine Intelligence Applications}
+    {Aug 2026 -- Jun 2027}
+    {Bachelor of Engineering (First Class Honours),
+    Computer Engineering}
+    {Aug 2023 -- Aug 2026}
+
+  \resumeItemListStart
+    \resumeItem{
+      GPA: 4.75/5.0
+      $|$ Dean's List in all eligible semesters (2/2)
+      $|$ Engineering Scholars Programme
+    }
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Stanford University}
+    {Stanford, CA}
+    {Visiting Student, Spring Quarter}
+    {Apr 2025 -- Jun 2025}
+
+\resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------
 \section{Experience}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Robotics Software Engineer Intern}{May 2026 -- Present}
-      {DSO}{Singapore}
-      \resumeItemListStart
-          \resumeItem{Developed a DDS-based robot exploration simulator with LLM-powered autonomous planning agent for indoor environment navigation}
-          \resumeItem{Built scene graph editor and web-based visualizer for real-time robot pose, status, and task tracking via DDS topics}
-          \resumeItem{Implemented epistemic reasoning contract system enforcing evidence-backed decision making for robot action planning}
-          \resumeItem{Created Python tool integration allowing LLM planner to query scene graph, compute distances, and rank exploration frontiers}
-          \resumeItem{Designed prompt profiles (control/raw) and reasoning contracts for robust autonomous exploration in unknown environments}
-      \resumeItemListEnd
 
-    \resumeSubheading
-      {Robotics Software Engineer}{Jan 2025 -- Dec 2025}
-      {ZeroshotData}{San Francisco, CA}
-      \resumeItemListStart
-          \resumeItem{Architected and deployed production cloud infrastructure on GCP using Terraform, GKE, Cloud SQL, and VPC, reducing environment setup time from 3 hours to 15 minutes}
-          \resumeItem{Built scalable video processing apps (Python/FFmpeg/OpenCV) and ORB SLAM3 systems, reducing pipeline costs by 50\% via GPU-accelerated Kubernetes autoscaling}
-          \resumeItem{Built Flask API servers with Swagger/PostREST and deployed dockerized containers via Pub/Sub for parallel job processing}
-          \resumeItem{Created 3D trajectory visualizer using Rerun with URDF models for interactive robotic motion analysis}
-          \resumeItem{Implemented data sharding and synthetic data generation using Mosaic for scalable ML dataset augmentation}
-      \resumeItemListEnd
+\resumeSubHeadingListStart
 
-    \resumeSubheading
-      {SWE Intern}{May 2024 -- Aug 2024}
-      {A*STAR — National Metrology Centre}{Singapore}
-      \resumeItemListStart
-          \resumeItem{Developed autonomous data-measurement web server using Python (PyVISA, Pandas, Dash) on OrangePi 3B+ for lab instrument data collection and visualization}
-          \resumeItem{Engineered frequency synthesizer using Verilog and GOWIN IP cores on Tang Nano 20K, achieving 6.5--9.0 ns precision}
-      \resumeItemListEnd
+  \resumeSubheading
+    {Robotics Software Engineer Intern}
+    {May 2026 -- Present}
+    {
+      \href{https://www.dso.org.sg/}{
+        \underline{DSO National Laboratories}
+      }
+    }
+    {Singapore}
 
-    \resumeSubheading
-      {SWE Intern}{Apr 2023 -- Jun 2023}
-      {HolyWally}{Singapore}
-      \resumeItemListStart
-        \resumeItem{Spearheaded internal tools using Python, SQL, and Superblocks with PostgreSQL, consolidating data access for \textasciitilde100 users in a single dashboard}
-        \resumeItem{Led QA, designing Postman calls to interface with third-party APIs (episode6) and collaborating with backend engineers to resolve UAT bugs}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
+  \resumeItemListStart
+    \resumeItem{
+      Built an agentic robot task-planning harness inspired by SayPlan
+      and LookPlanGraph, integrating local LLM tool use, DDS middleware,
+      and hierarchical 3D scene graphs for spatial reasoning and
+      closed-loop replanning
+    }
+
+    \resumeItem{
+      Developed low-fidelity robot embodiment simulators and DDS adapters
+      for external simulators, enabling hardware-independent testing,
+      scenario replay, telemetry, and end-to-end autonomy validation
+    }
+
+    \resumeItem{
+      Benchmarked 40+ compact language models for task success, tool-use
+      reliability, inference latency, and resource usage, producing a
+      reproducible evaluation pipeline for local and edge deployment
+    }
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Robotics Software Engineer}
+    {Jan 2025 -- Dec 2025}
+    {
+      \href{https://www.linkedin.com/company/zeroshotdata/}{
+        \underline{ZeroshotData --- Early-Stage Robotics Startup}
+      }
+    }
+    {San Francisco, CA}
+
+  \resumeItemListStart
+    \resumeItem{
+      Built robotics infrastructure on GCP using Terraform and Kubernetes,
+      deploying 20+ containerized services with CI/CD and FastAPI-based
+      device registration, telemetry, monitoring, and fleet operations
+    }
+
+    \resumeItem{
+      Integrated visual-inertial ORB-SLAM3 into a UMI gripper using OAK-D
+      stereo cameras, Kalibr camera--IMU calibration, Allan variance
+      analysis, and synchronized sensor acquisition
+    }
+
+    \resumeItem{
+      Built Python applications for the end-to-end processing pipeline
+      behind the
+      \href{https://huggingface.co/datasets/zeroshotdata/sf_fold}{
+        \underline{SF Fold dataset}
+      }
+      across 100+ hours of robot-folding demonstrations, including video
+      preprocessing and synchronization, automated data validation,
+      ORB-SLAM3 execution, generation of review videos and Rerun
+      visualizations, and Mosaic-based dataset sharding
+    }
+
+    \resumeItem{
+      Automated robot and sensor calibration using a Piper 6-DoF arm
+      and prototyped infrared tracking with Arducam cameras, hardware
+      frame synchronization, and Orange Pi compute
+    }
+
+    \resumeItem{
+      Engineered an electromagnetic full-body tracking system with a
+      1.5 m range, centimetre-level positional accuracy, and
+      $5^\circ$ rotational accuracy using custom PCBs, STM32 firmware,
+      Helmholtz coils, and Onshape CAD
+    }
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Research Engineering Intern}
+    {May 2024 -- Aug 2024}
+    {
+      \href{https://asef.a-star.edu.sg/institutes/nmc}{
+        \underline{A*STAR --- National Metrology Centre}
+      }
+    }
+    {Singapore}
+
+  \resumeItemListStart
+    \resumeItem{
+      Built a Python measurement platform using PyVISA, Pandas, and Dash
+      on an Orange Pi, and designed a Verilog FPGA frequency synthesizer
+      achieving 6.5--9.0 ns timing precision
+    }
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Software Engineering Intern}
+    {Apr 2023 -- Jun 2023}
+    {
+      \href{https://www.holywally.com/insta-wally}{
+        \underline{HolyWally --- Fintech Startup}
+      }
+    }
+    {Singapore}
+
+  \resumeItemListStart
+    \resumeItem{
+      Built Python and SQL tools backed by PostgreSQL for an operational
+      dashboard used by approximately 100 employees
+    }
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------
 \section{Projects}
+
 \resumeSubHeadingListStart
 
   \resumeProjectHeading
-    {\href{https://github.com/ryryry-3302/flare.ai}{\underline{\textbf{Flair AI}}} $|$ \emph{AI writing assistant; React, Tiptap, Twilio, Brainbase, Gemini, Tailwind}}{2025}
-    \resumeItemListStart
-      \resumeItem{\textbf{Winner (1st place, \$1{,}500)} --- AI for Good Hackathon. Built end-to-end app with automated grading and AI voice agent for \textasciitilde400 students}
-      \resumeItem{Integrated \textbf{Brainbase}, \textbf{Twilio}, and \textbf{Gemini} for real-time voice feedback; built frontend with \textbf{React}, \textbf{Tiptap}, and \textbf{Tailwind CSS}}
-    \resumeItemListEnd
+    {
+      \href{https://github.com/ryryry-3302/flare.ai}{
+        \underline{\textbf{Flair AI}}
+      }
+      $|$
+      \emph{React, Gemini, Twilio}
+    }
+    {2025}
 
-  \resumeProjectHeading
-    {\href{https://ryan-leong-portfolio.vercel.app/projects/leasy}{\underline{\textbf{Leasy}}} $|$ \emph{Lease takeover platform; Next.js 14, Mapbox GL JS, Tailwind CSS, TypeScript}}{2025}
-    \resumeItemListStart
-      \resumeItem{Developed Zillow-style housing platform with \textbf{Mapbox GL JS} interactive maps and advanced filtering for price/location}
-      \resumeItem{Built responsive UI with \textbf{Next.js App Router} and \textbf{Tailwind CSS}, optimizing search performance for large datasets}
-    \resumeItemListEnd
-
-  \resumeProjectHeading
-    {\href{https://devpost.com/software/medbox-ai}{\underline{\textbf{MedBox AI}}} $|$ \emph{Medical Procedure Analysis; Next.js, OpenCV, Chroma, Python}}{2025}
-    \resumeItemListStart
-      \resumeItem{Built intelligent surgery "black box" using \textbf{OpenCV} for real-time tool detection and \textbf{Chroma} RAG pipeline for protocol checks}
-      \resumeItem{Created clinician dashboard in \textbf{Next.js} to visualize procedure timelines and automatically flag deviations}
-    \resumeItemListEnd
+  \resumeItemListStart
+    \resumeItem{
+      \textbf{Winner, 1st Place (\$1,500) ---
+      AI for Good Hackathon.}
+      Built an AI writing assistant with automated grading and a
+      Gemini/Twilio voice-feedback agent for approximately 400 students
+    }
+  \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
 %-----------SKILLS-----------
 \section{Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small\item{
-      \textbf{Robotics}: ROS2, ORB SLAM3, URDF, LiDAR, SLAM, Motion Planning, Robot Navigation, DDS
-      \\ \vspace{2pt}
-      \textbf{Programming}: Python, C++, TypeScript/JavaScript, SQL, Verilog
-      \\ \vspace{2pt}
-      \textbf{ML/AI}: LLM Integration, RAG, OpenCV, Video Processing, Synthetic Data Generation
-      \\ \vspace{2pt}
-      \textbf{Cloud \& Infrastructure}: GCP (GKE, Cloud Run, Pub/Sub, Cloud SQL), Kubernetes, Terraform, Docker, CI/CD
-      \\ \vspace{2pt}
-      \textbf{Web Development}: React, Next.js, Tailwind CSS, Flask, FastAPI
-    }
- \end{itemize}
 
-%-------------------------------------------
+\vspace{2pt}
+
+\begin{tabularx}{\textwidth}{
+  @{}
+  >{\small}l
+  @{\hspace{0.7em}}
+  >{\small\raggedright\arraybackslash}X
+  @{}
+}
+
+  \resumeSkillRow
+    {Programming \& ML:}
+    {Python, C++, TypeScript/JavaScript, SQL, Bash;
+    PyTorch, NumPy, Pandas, OpenCV, llama.cpp, FastAPI, React, pytest}
+
+  \resumeSkillRow
+    {Robotics \& Autonomy:}
+    {ROS 2, DDS, Gazebo, ORB-SLAM3, visual-inertial odometry (VIO),
+    sensor fusion, camera--IMU calibration, Kalibr, DepthAI, OAK-D,
+    3D scene graphs, task planning, URDF, Rerun}
+
+  \resumeSkillRow
+    {Systems \& Cloud:}
+    {Linux, Git, REST APIs, GCP, Kubernetes (K8s), Terraform,
+    Docker, CI/CD, PostgreSQL}
+
+  \resumeSkillRow
+    {Embedded \& Interfaces:}
+    {STM32/RaspberryPi/OrangePi, Verilog/FPGA, CAN, MIPI CSI-2, USB, UART,
+    I\textsuperscript{2}C, SPI, MQTT}
+
+  \resumeSkillRow
+    {Hardware \& CAD:}
+    {KiCad, PCB design and bring-up, soldering, Onshape CAD,
+    3D printing, oscilloscopes, electromechanical prototyping,
+    sensor bring-up}
+
+  \resumeSkillRow
+    {Languages:}
+    {English, Mandarin Chinese (Limited Working Proficiency)}
+
+\end{tabularx}
+
 \end{document}
