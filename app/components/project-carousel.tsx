@@ -28,8 +28,8 @@ const projects: Project[] = [
 			"AI writing assistant for 826 Valencia with automated essay grading, voice feedback, and live writing metrics.",
 		tags: ["React", "Twilio", "Gemini"],
 		previewType: "image",
-		previewSrc: "https://img.youtube.com/vi/ia1Ee2U0DO8/maxresdefault.jpg",
-		previewAlt: "Flair AI demo preview.",
+		previewSrc: "/flairaicover.png",
+		previewAlt: "Flair AI writing assistant cover image.",
 	},
 	{
 		slug: "orb-slam3-stereo",
