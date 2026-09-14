@@ -1,10 +1,10 @@
-import { allProjects } from "contentlayer/generated";
 import { Navigation } from "../components/nav";
+import { getAllProjects, type Project } from "./data";
 import { ProjectTimeline, type TimelineProject } from "./project-timeline";
 
 export const revalidate = 60;
 
-function hasTimelineFields(project: (typeof allProjects)[number]): project is TimelineProject {
+function hasTimelineFields(project: Project): project is TimelineProject {
 	return (
 		typeof (project as Partial<TimelineProject>).category === "string" &&
 		typeof (project as Partial<TimelineProject>).previewType === "string" &&
@@ -14,6 +14,7 @@ function hasTimelineFields(project: (typeof allProjects)[number]): project is Ti
 }
 
 export default async function ProjectsPage() {
+	const allProjects = await getAllProjects();
 	const selectedSlug = "orb-slam3-stereo";
 	const featuredOrder = [
 		"emf-full-body-tracking",
