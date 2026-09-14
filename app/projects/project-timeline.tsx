@@ -2,7 +2,7 @@ import type { Project } from "contentlayer/generated";
 import Link from "next/link";
 import { ArrowUpRight, Github, Globe2 } from "lucide-react";
 
-type TimelineProject = Project & {
+export type TimelineProject = Project & {
 	category: string;
 	previewType: string;
 	previewSrc: string;

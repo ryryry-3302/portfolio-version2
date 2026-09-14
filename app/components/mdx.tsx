@@ -1,9 +1,10 @@
 // @ts-nocheck
+"use client";
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useMDXComponent } from "next-contentlayer/hooks";
 import { MediaCarousel, ResourceLinks } from "./project-media";
+import { useMDXComponent } from "./use-mdx-component";
 
 function clsx(...args: any) {
 	return args.filter(Boolean).join(" ");
@@ -222,6 +223,10 @@ interface MdxProps {
 
 export function Mdx({ code }: MdxProps) {
 	const Component = useMDXComponent(code);
+
+	if (!Component) {
+		return <div className="mdx project-writeup" />;
+	}
 
 	return (
 		<div className="mdx project-writeup">

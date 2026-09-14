@@ -1,8 +1,17 @@
 import { allProjects } from "contentlayer/generated";
 import { Navigation } from "../components/nav";
-import { ProjectTimeline } from "./project-timeline";
+import { ProjectTimeline, type TimelineProject } from "./project-timeline";
 
 export const revalidate = 60;
+
+function hasTimelineFields(project: (typeof allProjects)[number]): project is TimelineProject {
+	return (
+		typeof (project as Partial<TimelineProject>).category === "string" &&
+		typeof (project as Partial<TimelineProject>).previewType === "string" &&
+		typeof (project as Partial<TimelineProject>).previewSrc === "string" &&
+		typeof (project as Partial<TimelineProject>).previewAlt === "string"
+	);
+}
 
 export default async function ProjectsPage() {
 	const selectedSlug = "orb-slam3-stereo";
@@ -17,6 +26,7 @@ export default async function ProjectsPage() {
 
 	const published = allProjects
 		.filter((project) => project.published)
+		.filter(hasTimelineFields)
 		.sort(
 			(a, b) =>
 				new Date(b.date ?? Number.NEGATIVE_INFINITY).getTime() -
