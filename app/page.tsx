@@ -43,7 +43,7 @@ export default function Home() {
 						<div className="p-8">
 							<h3 className="text-lg font-pixel text-pokemon-yellow mb-6 pokemon-glow uppercase">▶ Background</h3>
 							<p className="text-white/80 mb-4 leading-relaxed font-pixel text-xs md:text-sm">
-								I'm a Computer Engineering undergraduate at the National University of Singapore,
+								I&apos;m pursuing an MSc in Computer Engineering at the National University of Singapore,
 								currently working as a Robotics Software Engineer Intern at DSO National Laboratories,
 								where I build agentic robotics software, simulation tooling, and autonomy systems.
 							</p>
@@ -66,6 +66,18 @@ export default function Home() {
 							<h3 className="text-lg font-pixel text-pokemon-yellow mb-6 pokemon-glow uppercase">▶ Education</h3>
 							<div className="space-y-6">
 								<div>
+									<div className="flex flex-col md:flex-row md:items-start justify-between mb-2 gap-2">
+										<div>
+											<p className="font-pixel text-white text-xs md:text-sm">National University of Singapore</p>
+											<p className="text-white/60 text-xs mt-1 font-pixel">MSc, Computer Engineering</p>
+											<p className="text-white/60 text-xs mt-1 font-pixel">Machine Intelligence Applications</p>
+										</div>
+										<span className="px-2 py-1 bg-pokemon-blue pixel-border text-xs text-white font-pixel whitespace-nowrap">
+											EXPECTED JUN 2027
+										</span>
+									</div>
+								</div>
+								<div className="pt-4 border-t-2 border-white/10">
 									<div className="flex flex-col md:flex-row md:items-start justify-between mb-2 gap-2">
 										<div>
 											<p className="font-pixel text-white text-xs md:text-sm">National University of Singapore</p>
